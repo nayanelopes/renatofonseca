@@ -305,13 +305,140 @@ function Gallery() {
   );
 }
 
+const AGENDA = [
+  {
+    month: "Maio",
+    icon: "✊🏾",
+    events: [
+      { date: "28/05", weekday: "Quinta", items: [
+        { title: "Canjerê Pai Carlos", location: "Rua Berlanda Bezerra, 58, Caixa D'água — Olinda", time: "18h" },
+        { title: "Ilê Axé Aziri Lade", location: "Rua Caracas, 325, Alto Sol Nascente — Olinda", time: "19h" },
+      ]},
+      { date: "29/05", weekday: "Sexta", items: [
+        { title: "Inauguração Espaço Cultural Casa Macumba Ordinária — Lançamento Coletivo Maré Negra", location: "Espaço Cultura Casa Macumba Ordinária — Pátio do Terço — Recife", time: "18h" },
+      ]},
+      { date: "30/05", weekday: "Sábado", items: [
+        { title: "Ylé Asé Dan Lodó", location: "Loteamento Vale do Capibaribe, Quadra 38 — Limoeiro", time: "13h" },
+        { title: "Yle Axé Oyá Egunitá — Pai Flor", location: "Rua da Misericórdia, 205 — Macaxeira", time: "15h" },
+        { title: "Cabaré da Ritinha — Pai Fábio", location: "Rua Transamazônica, 506, Fosfato — Abreu e Lima", time: "16h" },
+        { title: "Roça Obá Aganjú Osún Opará", location: "Rua Ernesto Cavalcanti, 84 — Afogados/Recife", time: "17h" },
+      ]},
+      { date: "31/05", weekday: "Domingo", items: [
+        { title: "Centro de Jurema Mestre José dos Anjos", location: "Rua Cascata de Cima, 38 — Santo Aleixo — Jaboatão dos Guararapes", time: "15h" },
+        { title: "Roça de Xangô Ogodô — Pai Rinaldo de Xangô", location: "Rua São João, 14, Jardim Jordão", time: "18h" },
+      ]},
+    ],
+  },
+  {
+    month: "Junho",
+    icon: "✊🏾",
+    events: [
+      { date: "06/06", weekday: "Sábado", items: [
+        { title: "Casa da Mestra Ritinha", location: "Rua Diadema, 53 — Vasco da Gama/Recife", time: "15h" },
+        { title: "Catimbó dos Mestres — Espaço Cultural Casa Macumba Ordinária", location: "Rua Vidal de Negreiros, 100, Santo Antônio — Recife", time: "18h" },
+      ]},
+      { date: "10/06", weekday: "Quarta", items: [
+        { title: "Centro de Umbanda Zé do Beco", location: "Vila Social — Surubim", time: "14h" },
+      ]},
+      { date: "13/06", weekday: "Sábado", items: [
+        { title: "Tramissao Copa do Mundo — Espaço Cultural Casa Macumba Ordinária", location: "Rua Vidal de Negreiros, Santo Antônio — Recife", time: "" },
+        { title: "Asé Alaafin", location: "Rua Dois de Fevereiro", time: "18h" },
+      ]},
+      { date: "21/06", weekday: "Sábado", items: [
+        { title: "Roça Okueran", location: "Rua Córrego Central, 189 — Linha do Tiro", time: "18h" },
+        { title: "Centro Cultural Caboclo Manoel da Luz", location: "Rua 21, 45, Maranguape 1 — Paulista", time: "19h" },
+      ]},
+      { date: "26/06", weekday: "Sexta", items: [
+        { title: "Ilê Maroketú Asé Aronín", location: "Rua Dallas, 5 — Sítio Fragoso", time: "19h" },
+      ]},
+      { date: "27/06", weekday: "Sábado", items: [
+        { title: "Samba dos Pretos Velhos — Ano 2 — Ylê Asé Keobambo Niwá Omin", location: "Rua Sertânia, 295 — Pau Amarelo", time: "18h" },
+      ]},
+    ],
+  },
+  {
+    month: "Julho",
+    icon: "✊🏾",
+    events: [
+      { date: "14/07", weekday: "Terça", items: [
+        { title: "Canjerê Juremeiro Binho", location: "Rua Luiz Bezerra de Menezes, 38 — Águas Compridas — Olinda", time: "19h" },
+      ]},
+    ],
+  },
+];
+
 function Agenda() {
   return (
     <section id="agenda" className="border-y border-border bg-[var(--brand-cream)]/60 py-20">
       <div className="mx-auto max-w-7xl px-6">
-        <SectionTitle eyebrow="Agenda" title="Onde Renato vai estar" intro="Acompanhe os próximos encontros, atos e eventos culturais." />
-        <div className="rounded-2xl border border-dashed border-[var(--brand-brown)]/40 bg-card p-10 text-center">
-          <p className="text-foreground/70">Novas datas serão divulgadas em breve. Acompanhe pelo Instagram <a href={INSTAGRAM_URL} className="font-semibold text-[var(--brand-green-deep)] underline">@renatofonsecape</a>.</p>
+        <SectionTitle
+          eyebrow="Agenda"
+          title="Onde Renato vai estar"
+          intro="Acompanhe os próximos encontros, atos e eventos culturais da pré-campanha."
+        />
+        <div className="space-y-14">
+          {AGENDA.map((group) => (
+            <div key={group.month}>
+              <div className="mb-6 flex items-center gap-3">
+                <h3 className="font-serif text-3xl tracking-tight text-[var(--brand-green-deep)]">
+                  {group.month}
+                </h3>
+                <span className="text-2xl">{group.icon}</span>
+                <span className="h-px flex-1 bg-[var(--brand-brown)]/25" />
+              </div>
+              <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+                {group.events.map((day) => (
+                  <article
+                    key={day.date}
+                    className="flex flex-col rounded-2xl border border-border bg-card p-6 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"
+                  >
+                    <div className="mb-3 flex items-baseline gap-2">
+                      <span className="font-serif text-2xl font-bold text-[var(--brand-green-deep)]">
+                        {day.date}
+                      </span>
+                      <span className="rounded-full bg-[var(--brand-green-soft)] px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wider text-[var(--brand-green-deep)]">
+                        {day.weekday}
+                      </span>
+                    </div>
+                    <div className="space-y-4">
+                      {day.items.map((item, idx) => (
+                        <div key={idx} className="border-l-2 border-[var(--brand-green)]/40 pl-3">
+                          <p className="text-[15px] font-semibold leading-snug text-foreground">
+                            {item.title}
+                          </p>
+                          {item.location && (
+                            <p className="mt-1 flex items-start gap-1.5 text-[13px] leading-relaxed text-muted-foreground">
+                              <span className="mt-0.5 text-[var(--brand-brown)]">📍</span>
+                              {item.location}
+                            </p>
+                          )}
+                          {item.time && (
+                            <p className="mt-1 text-[12px] font-medium text-[var(--brand-brown-deep)]">
+                              🕐 {item.time}
+                            </p>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="mt-12 rounded-2xl border border-dashed border-[var(--brand-brown)]/40 bg-card p-8 text-center">
+          <p className="text-foreground/70">
+            Novas datas serão divulgadas em breve. Acompanhe pelo Instagram{" "}
+            <a
+              href={INSTAGRAM_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="font-semibold text-[var(--brand-green-deep)] underline"
+            >
+              @renatofonsecape
+            </a>
+            .
+          </p>
         </div>
       </div>
     </section>
