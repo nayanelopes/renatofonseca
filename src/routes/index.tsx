@@ -1,8 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
-import heroImage from "@/assets/hero-renato.jpg";
+import logoAsset from "@/assets/logo-renato.jpg.asset.json";
+import renatoPhotoAsset from "@/assets/renato-foto.png.asset.json";
 import { useState } from "react";
 import { toast } from "sonner";
 import { Toaster } from "@/components/ui/sonner";
+
+const logoImage = logoAsset.url;
+const heroImage = renatoPhotoAsset.url;
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -94,10 +98,7 @@ function Header() {
     <header className="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-4">
         <a href="#top" className="flex items-center gap-2">
-          <span className="inline-block h-2.5 w-2.5 rounded-full bg-[var(--brand-green)]" />
-          <span className="text-sm font-bold uppercase tracking-[0.18em] text-[var(--brand-green-deep)]">
-            Renato Fonseca
-          </span>
+          <img src={logoImage} alt="Renato Fonseca — A Voz do Axé" className="h-12 w-auto sm:h-14" />
         </a>
         <nav className="hidden items-center gap-6 lg:flex">
           {NAV_LINKS.map((l) => (
@@ -195,7 +196,7 @@ function Hero() {
         <div className="relative">
           <div className="absolute -inset-4 rounded-3xl bg-[var(--brand-green-deep)]/10 blur-2xl" />
           <div className="relative overflow-hidden rounded-3xl border-4 border-[var(--brand-brown)]/40 shadow-2xl">
-            <img src={heroImage} alt="Renato Fonseca — A Voz do Axé" width={1536} height={1280} className="h-full w-full object-cover" />
+            <img src={heroImage} alt="Renato Fonseca, pré-candidato a Deputado Federal" className="h-full w-full object-cover" />
           </div>
         </div>
       </div>
