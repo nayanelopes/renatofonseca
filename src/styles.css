@@ -154,3 +154,58 @@
     color: var(--color-foreground);
   }
 }
+
+/* ============== Brand animations & utilities ============== */
+@keyframes brand-fade-up {
+  from { opacity: 0; transform: translate3d(0, 24px, 0); }
+  to   { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+@keyframes brand-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes brand-ken-burns {
+  0%   { transform: scale(1) translate3d(0, 0, 0); }
+  50%  { transform: scale(1.08) translate3d(-1%, -1%, 0); }
+  100% { transform: scale(1) translate3d(0, 0, 0); }
+}
+@keyframes brand-float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+@keyframes brand-shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translate3d(0, 24px, 0);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+.animate-ken-burns { animation: brand-ken-burns 18s ease-in-out infinite; }
+.animate-float { animation: brand-float 6s ease-in-out infinite; }
+.animate-fade-up { animation: brand-fade-up 0.8s ease-out both; }
+.animate-fade-in { animation: brand-fade-in 0.8s ease-out both; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .animate-ken-burns, .animate-float, .animate-fade-up, .animate-fade-in {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+:focus-visible {
+  outline: 3px solid var(--brand-green);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+html { scroll-behavior: smooth; }
