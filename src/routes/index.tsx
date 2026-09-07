@@ -248,54 +248,34 @@ function Hero() {
   return (
     <section id="top" className="relative overflow-hidden">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_left,var(--brand-green-soft),transparent_55%),radial-gradient(ellipse_at_bottom_right,oklch(0.92_0.05_55),transparent_55%)]" />
-      <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-16 lg:grid-cols-[1.1fr_0.9fr] lg:py-24">
+      <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-12 lg:grid-cols-[1fr_1fr] lg:py-16">
         <div className="animate-fade-up">
-          <span className="inline-flex w-fit items-center gap-2 rounded-full border border-[var(--brand-brown)]/40 bg-[var(--brand-cream)] px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--brand-brown-deep)]">
-            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[var(--brand-green)]" />
-            Pré-candidato a Deputado Federal · Pernambuco
-          </span>
-          <h1 className="mt-5 font-serif text-5xl font-bold leading-[1.02] tracking-tight text-[var(--brand-green-deep)] sm:text-6xl lg:text-7xl">
+          <h1 className="font-serif text-6xl font-bold leading-[0.95] tracking-tight text-[var(--brand-green-deep)] sm:text-7xl lg:text-8xl">
             RENATO<br />FONSECA
           </h1>
-          <p className="mt-5 font-serif text-2xl italic leading-snug text-[var(--brand-brown-deep)] sm:text-3xl">
-            "Da rua à luta. Da fé à política. Pelo povo de Pernambuco."
-          </p>
-          <p className="mt-5 max-w-xl text-base leading-relaxed text-foreground/80 sm:text-lg">
-            Levar a voz dos terreiros, das periferias e da cultura popular ao Congresso Nacional —
-            transformando vivência em <strong>políticas públicas</strong>.
-          </p>
-
-          {/* Trust strip */}
-          <ul className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 text-[12px] font-semibold text-[var(--brand-green-deep)]">
-            <li className="flex items-center gap-1.5"><CheckCircle2 className="h-4 w-4 text-[var(--brand-brown)]" />22 anos na Jurema Sagrada</li>
-            <li className="flex items-center gap-1.5"><CheckCircle2 className="h-4 w-4 text-[var(--brand-brown)]" />Fundador da Macumba Ordinária</li>
-            <li className="flex items-center gap-1.5"><CheckCircle2 className="h-4 w-4 text-[var(--brand-brown)]" />Defensor dos Povos Tradicionais</li>
-          </ul>
-
-          {/* Primary CTA + microtext */}
-          <div className="mt-8">
-            <a href="#participe" className="group inline-flex items-center gap-2 rounded-full bg-[var(--brand-green-deep)] px-7 py-4 text-sm font-bold uppercase tracking-wider text-primary-foreground shadow-xl transition-all hover:-translate-y-0.5 hover:shadow-2xl">
-              <Heart className="h-4 w-4" /> Quero fazer parte da caminhada
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </a>
-            <p className="mt-3 text-xs text-foreground/65">
-              Junte-se a milhares de pessoas construindo um Pernambuco mais justo.
-            </p>
+          <div className="mt-6 flex flex-wrap items-center gap-4">
+            <span className="rounded-2xl bg-[var(--brand-green-deep)] px-6 py-3 font-serif text-5xl font-bold leading-none tracking-tight text-primary-foreground shadow-xl sm:text-6xl">
+              5077
+            </span>
+            <span className="text-[12px] font-bold uppercase leading-tight tracking-[0.22em] text-[var(--brand-brown-deep)]">
+              Deputado Federal<br />Pernambuco
+            </span>
           </div>
+          <p className="mt-6 max-w-lg font-serif text-2xl italic leading-snug text-[var(--brand-brown-deep)] sm:text-3xl">
+            "Da rua à luta. Pelo povo de Pernambuco."
+          </p>
 
-          {/* Secondary CTAs */}
-          <div className="mt-5 flex flex-wrap gap-2">
-            <a href="#quem" className="inline-flex items-center gap-1.5 rounded-full border border-[var(--brand-green-deep)]/30 px-4 py-2 text-xs font-bold uppercase tracking-wider text-[var(--brand-green-deep)] transition-colors hover:bg-[var(--brand-green-soft)]">
-              Conhecer Renato
+          <div className="mt-8 flex flex-wrap gap-3">
+            <a href="#quem" className="inline-flex items-center gap-2 rounded-full bg-[var(--brand-green-deep)] px-7 py-4 text-sm font-bold uppercase tracking-wider text-primary-foreground shadow-xl transition-transform hover:-translate-y-0.5">
+              Conheça Renato
             </a>
-            <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 rounded-full border border-[var(--brand-brown)]/40 px-4 py-2 text-xs font-bold uppercase tracking-wider text-[var(--brand-brown-deep)] transition-colors hover:bg-[var(--brand-cream)]">
-              <MessageCircle className="h-3.5 w-3.5" /> WhatsApp
-            </a>
-            <a href={VAQUINHA_URL} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 rounded-full border border-[var(--brand-brown)]/40 px-4 py-2 text-xs font-bold uppercase tracking-wider text-[var(--brand-brown-deep)] transition-colors hover:bg-[var(--brand-cream)]">
-              Contribuir
+            <a href="#participe" className="group inline-flex items-center gap-2 rounded-full border-2 border-[var(--brand-brown)] px-7 py-4 text-sm font-bold uppercase tracking-wider text-[var(--brand-brown-deep)] transition-colors hover:bg-[var(--brand-brown)] hover:text-primary-foreground">
+              Faça parte
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </a>
           </div>
         </div>
+
 
         {/* Hero carousel */}
         <div className="relative animate-fade-in">
