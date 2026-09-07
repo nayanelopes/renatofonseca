@@ -50,16 +50,20 @@ const YOUTUBE_URL = "https://youtube.com/@renatofonsecape";
 const TIKTOK_URL = "https://tiktok.com/@renatofonsecape";
 const VAQUINHA_URL = "https://queroapoiar.com.br/renato-fonseca";
 
+const WHATSAPP_MSG = "Olá! Conheci a campanha de Renato Fonseca 5077 pelo site e quero saber como participar.";
+const WHATSAPP_CTA = `${WHATSAPP_URL}?text=${encodeURIComponent(WHATSAPP_MSG)}`;
+
 const NAV_LINKS = [
   { label: "História", href: "#quem" },
-  { label: "Trajetória", href: "#trajetoria" },
-  { label: "Movimento", href: "#macumba" },
-  { label: "Bandeiras", href: "#bandeiras" },
-  { label: "Propostas", href: "#propostas" },
+  { label: "Eixos", href: "#propostas" },
+  { label: "Bancada da Macumba", href: "#bancada" },
+  { label: "Ecossantinho", href: "#ecossantinho" },
+  { label: "Pernambuco", href: "#mapa" },
   { label: "Agenda", href: "#agenda" },
   { label: "Galeria", href: "#galeria" },
   { label: "Faça Parte", href: "#participe" },
 ];
+
 
 /* =================================================================== */
 /* Hooks                                                                */
