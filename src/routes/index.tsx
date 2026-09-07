@@ -647,28 +647,22 @@ function PItem({ label, value }: { label: string; value: string }) {
 /* =================================================================== */
 
 const AGENDA_FLAT: { date: string; weekday: string; title: string; location: string; time: string; iso: string }[] = [
-  // Maio
-  { date: "28/05", weekday: "Quinta", title: "Canjerê Pai Carlos", location: "Rua Berlanda Bezerra, 58, Caixa D'água — Olinda", time: "18h", iso: "2025-05-28T18:00:00-03:00" },
-  { date: "28/05", weekday: "Quinta", title: "Ilê Axé Aziri Lade", location: "Rua Caracas, 325, Alto Sol Nascente — Olinda", time: "19h", iso: "2025-05-28T19:00:00-03:00" },
-  { date: "29/05", weekday: "Sexta", title: "Inauguração Espaço Cultural Macumba Ordinária", location: "Pátio do Terço — Recife", time: "18h", iso: "2025-05-29T18:00:00-03:00" },
-  { date: "30/05", weekday: "Sábado", title: "Ylé Asé Dan Lodó", location: "Vale do Capibaribe, Q.38 — Limoeiro", time: "13h", iso: "2025-05-30T13:00:00-03:00" },
-  { date: "30/05", weekday: "Sábado", title: "Yle Axé Oyá Egunitá — Pai Flor", location: "Rua da Misericórdia, 205 — Macaxeira", time: "15h", iso: "2025-05-30T15:00:00-03:00" },
-  { date: "30/05", weekday: "Sábado", title: "Cabaré da Ritinha — Pai Fábio", location: "Rua Transamazônica, 506 — Abreu e Lima", time: "16h", iso: "2025-05-30T16:00:00-03:00" },
-  { date: "30/05", weekday: "Sábado", title: "Roça Obá Aganjú Osún Opará", location: "Rua Ernesto Cavalcanti, 84 — Afogados", time: "17h", iso: "2025-05-30T17:00:00-03:00" },
-  { date: "31/05", weekday: "Domingo", title: "Centro de Jurema Mestre José dos Anjos", location: "Santo Aleixo — Jaboatão", time: "15h", iso: "2025-05-31T15:00:00-03:00" },
-  { date: "31/05", weekday: "Domingo", title: "Roça de Xangô Ogodô — Pai Rinaldo", location: "Jardim Jordão", time: "18h", iso: "2025-05-31T18:00:00-03:00" },
-  // Junho
-  { date: "06/06", weekday: "Sábado", title: "Casa da Mestra Ritinha", location: "Vasco da Gama — Recife", time: "15h", iso: "2025-06-06T15:00:00-03:00" },
-  { date: "06/06", weekday: "Sábado", title: "Catimbó dos Mestres — Espaço Cultural", location: "Santo Antônio — Recife", time: "18h", iso: "2025-06-06T18:00:00-03:00" },
-  { date: "10/06", weekday: "Quarta", title: "Centro de Umbanda Zé do Beco", location: "Vila Social — Surubim", time: "14h", iso: "2025-06-10T14:00:00-03:00" },
-  { date: "13/06", weekday: "Sábado", title: "Transmissão Copa do Mundo — Espaço Cultural", location: "Santo Antônio — Recife", time: "", iso: "2025-06-13T18:00:00-03:00" },
-  { date: "13/06", weekday: "Sábado", title: "Asé Alaafin", location: "Rua Dois de Fevereiro", time: "18h", iso: "2025-06-13T18:00:00-03:00" },
-  { date: "21/06", weekday: "Sábado", title: "Roça Okueran", location: "Linha do Tiro", time: "18h", iso: "2025-06-21T18:00:00-03:00" },
-  { date: "21/06", weekday: "Sábado", title: "Centro Cultural Caboclo Manoel da Luz", location: "Maranguape 1 — Paulista", time: "19h", iso: "2025-06-21T19:00:00-03:00" },
-  { date: "26/06", weekday: "Sexta", title: "Ilê Maroketú Asé Aronín", location: "Sítio Fragoso", time: "19h", iso: "2025-06-26T19:00:00-03:00" },
-  { date: "27/06", weekday: "Sábado", title: "Samba dos Pretos Velhos — Ano 2", location: "Pau Amarelo", time: "18h", iso: "2025-06-27T18:00:00-03:00" },
-  // Julho
-  { date: "14/07", weekday: "Terça", title: "Canjerê Juremeiro Binho", location: "Águas Compridas — Olinda", time: "19h", iso: "2025-07-14T19:00:00-03:00" },
+  // Setembro
+  { date: "07/09", weekday: "Segunda", title: "Reunião online da campanha", location: "Reunião online (link via WhatsApp)", time: "10h30", iso: "2026-09-07T10:30:00-03:00" },
+  { date: "08/09", weekday: "Terça", title: "Entrevista na Rádio Caranguejo Uçá — com Edson Fly", location: "Ilha de Deus — Recife", time: "9h", iso: "2026-09-08T09:00:00-03:00" },
+  { date: "09/09", weekday: "Quarta", title: "Encontro com Nega Day e o Samba", location: "Vila Flora Assunção, 58, São Bento — Olinda", time: "15h", iso: "2026-09-09T15:00:00-03:00" },
+  { date: "10/09", weekday: "Quinta", title: "Café com Axé — Mulheres de Terreiro na construção de políticas públicas", location: "Escritório de Renato Fonseca", time: "8h às 10h", iso: "2026-09-10T08:00:00-03:00" },
+  { date: "12/09", weekday: "Sábado", title: "Ilê Axé Iná Oba Xangô — Festa do Mestre Zé da Virada", location: "Rua Arara Azul, 10, Barra de Jangada — Jaboatão dos Guararapes", time: "14h", iso: "2026-09-12T14:00:00-03:00" },
+  { date: "12/09", weekday: "Sábado", title: "Seara do Caboclo Oxossi — Mestre Zé Juremeiro e Pombagira", location: "Subida da Marta, 175, Linha — Limoeiro", time: "15h", iso: "2026-09-12T15:00:00-03:00" },
+  { date: "12/09", weekday: "Sábado", title: "Ilê Axé Xangô Babá Lufan — Gira para Exu e Pombagira", location: "Gaibu — Cabo de Santo Agostinho", time: "16h", iso: "2026-09-12T16:00:00-03:00" },
+  { date: "12/09", weekday: "Sábado", title: "Ensaio Geral — Maracatu Cambinda Estrela", location: "Rua Elias Gomes, Xambona do Barreto (Portão Cultural)", time: "20h", iso: "2026-09-12T20:00:00-03:00" },
+  { date: "13/09", weekday: "Domingo", title: "Almoço com Pai Alexandro", location: "Gravatá", time: "12h", iso: "2026-09-13T12:00:00-03:00" },
+  { date: "14/09", weekday: "Segunda", title: "Café com Axé — Políticas de proteção para o povo de terreiro", location: "Escritório de Renato Fonseca", time: "8h30 às 10h", iso: "2026-09-14T08:30:00-03:00" },
+  { date: "14/09", weekday: "Segunda", title: "Reunião com Juremeiro Lenílson", location: "Alto do Pascoal — Recife", time: "17h", iso: "2026-09-14T17:00:00-03:00" },
+  { date: "19/09", weekday: "Sábado", title: "Grêmio Recreativo Pretos Velhos — Patrimônio Vivo de Pernambuco", location: "Alto da Sé — Olinda", time: "16h", iso: "2026-09-19T16:00:00-03:00" },
+  { date: "19/09", weekday: "Sábado", title: "Festa da Mestra Ritinha — Tenda São Jerônimo", location: "Rua Jerônimo Vilela, 615, Campo Grande", time: "18h", iso: "2026-09-19T18:00:00-03:00" },
+  { date: "21/09", weekday: "Segunda", title: "Pai Luciano — Festa para Exu", location: "Rua Veneza, 56, Iputinga — Recife", time: "19h", iso: "2026-09-21T19:00:00-03:00" },
+  { date: "26/09", weekday: "Sábado", title: "Cabaré da Ritinha", location: "Rua da Guia — Recife", time: "", iso: "2026-09-26T18:00:00-03:00" },
 ];
 
 function buildICS(ev: typeof AGENDA_FLAT[number]) {
