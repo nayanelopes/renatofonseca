@@ -50,16 +50,20 @@ const YOUTUBE_URL = "https://youtube.com/@renatofonsecape";
 const TIKTOK_URL = "https://tiktok.com/@renatofonsecape";
 const VAQUINHA_URL = "https://queroapoiar.com.br/renato-fonseca";
 
+const WHATSAPP_MSG = "Olá! Conheci a campanha de Renato Fonseca 5077 pelo site e quero saber como participar.";
+const WHATSAPP_CTA = `${WHATSAPP_URL}?text=${encodeURIComponent(WHATSAPP_MSG)}`;
+
 const NAV_LINKS = [
   { label: "História", href: "#quem" },
-  { label: "Trajetória", href: "#trajetoria" },
-  { label: "Movimento", href: "#macumba" },
-  { label: "Bandeiras", href: "#bandeiras" },
-  { label: "Propostas", href: "#propostas" },
+  { label: "Eixos", href: "#propostas" },
+  { label: "Bancada da Macumba", href: "#bancada" },
+  { label: "Ecossantinho", href: "#ecossantinho" },
+  { label: "Pernambuco", href: "#mapa" },
   { label: "Agenda", href: "#agenda" },
   { label: "Galeria", href: "#galeria" },
   { label: "Faça Parte", href: "#participe" },
 ];
+
 
 /* =================================================================== */
 /* Hooks                                                                */
@@ -127,17 +131,20 @@ function Index() {
         <Hero />
         <Story />
         <Timeline />
+        <Propostas />
+        <BancadaMacumba />
+        <Ecossantinho />
         <MacumbaOrdinaria />
         <Bandeiras />
-        <Propostas />
         <Agenda />
+        <MapaPE />
         <Galeria />
         <Depoimentos />
-        <MapaPE />
         <FacaParte />
         <RedesSociais />
         <Apoio />
       </main>
+
       <Footer />
       <FixedWhatsApp />
       <BackToTop />
@@ -241,54 +248,34 @@ function Hero() {
   return (
     <section id="top" className="relative overflow-hidden">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_left,var(--brand-green-soft),transparent_55%),radial-gradient(ellipse_at_bottom_right,oklch(0.92_0.05_55),transparent_55%)]" />
-      <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-16 lg:grid-cols-[1.1fr_0.9fr] lg:py-24">
+      <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-12 lg:grid-cols-[1fr_1fr] lg:py-16">
         <div className="animate-fade-up">
-          <span className="inline-flex w-fit items-center gap-2 rounded-full border border-[var(--brand-brown)]/40 bg-[var(--brand-cream)] px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--brand-brown-deep)]">
-            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[var(--brand-green)]" />
-            Pré-candidato a Deputado Federal · Pernambuco
-          </span>
-          <h1 className="mt-5 font-serif text-5xl font-bold leading-[1.02] tracking-tight text-[var(--brand-green-deep)] sm:text-6xl lg:text-7xl">
+          <h1 className="font-serif text-6xl font-bold leading-[0.95] tracking-tight text-[var(--brand-green-deep)] sm:text-7xl lg:text-8xl">
             RENATO<br />FONSECA
           </h1>
-          <p className="mt-5 font-serif text-2xl italic leading-snug text-[var(--brand-brown-deep)] sm:text-3xl">
-            "Da rua à luta. Da fé à política. Pelo povo de Pernambuco."
-          </p>
-          <p className="mt-5 max-w-xl text-base leading-relaxed text-foreground/80 sm:text-lg">
-            Levar a voz dos terreiros, das periferias e da cultura popular ao Congresso Nacional —
-            transformando vivência em <strong>políticas públicas</strong>.
-          </p>
-
-          {/* Trust strip */}
-          <ul className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 text-[12px] font-semibold text-[var(--brand-green-deep)]">
-            <li className="flex items-center gap-1.5"><CheckCircle2 className="h-4 w-4 text-[var(--brand-brown)]" />22 anos na Jurema Sagrada</li>
-            <li className="flex items-center gap-1.5"><CheckCircle2 className="h-4 w-4 text-[var(--brand-brown)]" />Fundador da Macumba Ordinária</li>
-            <li className="flex items-center gap-1.5"><CheckCircle2 className="h-4 w-4 text-[var(--brand-brown)]" />Defensor dos Povos Tradicionais</li>
-          </ul>
-
-          {/* Primary CTA + microtext */}
-          <div className="mt-8">
-            <a href="#participe" className="group inline-flex items-center gap-2 rounded-full bg-[var(--brand-green-deep)] px-7 py-4 text-sm font-bold uppercase tracking-wider text-primary-foreground shadow-xl transition-all hover:-translate-y-0.5 hover:shadow-2xl">
-              <Heart className="h-4 w-4" /> Quero fazer parte da caminhada
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </a>
-            <p className="mt-3 text-xs text-foreground/65">
-              Junte-se a milhares de pessoas construindo um Pernambuco mais justo.
-            </p>
+          <div className="mt-6 flex flex-wrap items-center gap-4">
+            <span className="rounded-2xl bg-[var(--brand-green-deep)] px-6 py-3 font-serif text-5xl font-bold leading-none tracking-tight text-primary-foreground shadow-xl sm:text-6xl">
+              5077
+            </span>
+            <span className="text-[12px] font-bold uppercase leading-tight tracking-[0.22em] text-[var(--brand-brown-deep)]">
+              Deputado Federal<br />Pernambuco
+            </span>
           </div>
+          <p className="mt-6 max-w-lg font-serif text-2xl italic leading-snug text-[var(--brand-brown-deep)] sm:text-3xl">
+            "Da rua à luta. Pelo povo de Pernambuco."
+          </p>
 
-          {/* Secondary CTAs */}
-          <div className="mt-5 flex flex-wrap gap-2">
-            <a href="#quem" className="inline-flex items-center gap-1.5 rounded-full border border-[var(--brand-green-deep)]/30 px-4 py-2 text-xs font-bold uppercase tracking-wider text-[var(--brand-green-deep)] transition-colors hover:bg-[var(--brand-green-soft)]">
-              Conhecer Renato
+          <div className="mt-8 flex flex-wrap gap-3">
+            <a href="#quem" className="inline-flex items-center gap-2 rounded-full bg-[var(--brand-green-deep)] px-7 py-4 text-sm font-bold uppercase tracking-wider text-primary-foreground shadow-xl transition-transform hover:-translate-y-0.5">
+              Conheça Renato
             </a>
-            <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 rounded-full border border-[var(--brand-brown)]/40 px-4 py-2 text-xs font-bold uppercase tracking-wider text-[var(--brand-brown-deep)] transition-colors hover:bg-[var(--brand-cream)]">
-              <MessageCircle className="h-3.5 w-3.5" /> WhatsApp
-            </a>
-            <a href={VAQUINHA_URL} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 rounded-full border border-[var(--brand-brown)]/40 px-4 py-2 text-xs font-bold uppercase tracking-wider text-[var(--brand-brown-deep)] transition-colors hover:bg-[var(--brand-cream)]">
-              Contribuir
+            <a href="#participe" className="group inline-flex items-center gap-2 rounded-full border-2 border-[var(--brand-brown)] px-7 py-4 text-sm font-bold uppercase tracking-wider text-[var(--brand-brown-deep)] transition-colors hover:bg-[var(--brand-brown)] hover:text-primary-foreground">
+              Faça parte
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </a>
           </div>
         </div>
+
 
         {/* Hero carousel */}
         <div className="relative animate-fade-in">
@@ -343,44 +330,43 @@ function SectionTitle({ eyebrow, title, intro, light }: { eyebrow: string; title
 /* Story                                                                */
 /* =================================================================== */
 
+const MOMENTOS = [
+  { Icon: HomeIcon, title: "A rua", text: "Abrigos na adolescência e vida nas ruas do Recife." },
+  { Icon: Sprout, title: "A reconstrução", text: "Fé, cultura e comunidade como caminho de volta." },
+  { Icon: Drum, title: "A luta", text: "Jurema, Macumba Ordinária e defesa dos terreiros." },
+];
+
 function Story() {
   return (
     <section id="quem" className="border-y border-border bg-[var(--brand-cream)]/50 py-20">
       <div className="mx-auto max-w-6xl px-5">
-        <SectionTitle eyebrow="Quem é Renato Fonseca" title="Uma história real de transformação" />
-        <div className="grid gap-10 lg:grid-cols-[1fr_1.2fr]">
-          <Reveal className="space-y-6 text-[15px] leading-relaxed text-foreground/85 sm:text-base">
-            <div className="flex gap-4">
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[var(--brand-brown)]/15 text-[var(--brand-brown-deep)]"><HomeIcon className="h-5 w-5" /></span>
-              <p>Viveu em <strong>abrigos durante a adolescência</strong> e foi <strong>morador de rua</strong>. Conheceu o avesso da cidade — e a força de quem resiste.</p>
-            </div>
-            <div className="flex gap-4">
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[var(--brand-brown)]/15 text-[var(--brand-brown-deep)]"><Sprout className="h-5 w-5" /></span>
-              <p>Superou a <strong>dependência química</strong> e reconstruiu sua vida através da fé, da cultura e do trabalho comunitário.</p>
-            </div>
-            <div className="flex gap-4">
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[var(--brand-brown)]/15 text-[var(--brand-brown-deep)]"><Flame className="h-5 w-5" /></span>
-              <p>Juremeiro há 22 anos, <strong>tombado ao Mestre Manoel Quebra Pedra</strong>. Defensor dos povos tradicionais e da liberdade religiosa.</p>
-            </div>
-            <div className="flex gap-4">
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[var(--brand-brown)]/15 text-[var(--brand-brown-deep)]"><Drum className="h-5 w-5" /></span>
-              <p>Criador da <strong>Macumba Ordinária</strong> e do <strong>Espaço Cultural</strong> no Pátio do Terço, em Recife — casa de resistência das religiões de matriz africana.</p>
-            </div>
-          </Reveal>
-          <Reveal delay={120}>
-            <blockquote className="relative rounded-3xl border-l-4 border-[var(--brand-brown)] bg-card p-8 shadow-md">
-              <Quote className="absolute -top-4 left-6 h-10 w-10 rounded-full bg-[var(--brand-green-deep)] p-2 text-[var(--brand-green-soft)]" />
-              <p className="font-serif text-xl italic leading-relaxed text-[var(--brand-green-deep)] sm:text-2xl">
-                "Conheço a dor da exclusão porque vivi ela. Conheço a força da fé porque ela me levantou. Conheço a importância da cultura porque ela salvou minha vida. Agora quero transformar isso em <span className="bg-[var(--brand-green-soft)] px-1">políticas públicas</span>."
-              </p>
-              <p className="mt-5 text-sm font-bold uppercase tracking-widest text-[var(--brand-brown-deep)]">— Renato Fonseca</p>
-            </blockquote>
-          </Reveal>
+        <Reveal className="mx-auto max-w-3xl text-center">
+          <h2 className="font-serif text-5xl font-bold tracking-tight text-[var(--brand-green-deep)] sm:text-6xl">DA RUA À LUTA</h2>
+          <p className="mt-5 font-serif text-xl italic leading-snug text-[var(--brand-brown-deep)] sm:text-2xl">
+            Renato conhece a exclusão não pelos livros. Conhece porque viveu.
+          </p>
+        </Reveal>
+        <div className="mt-12 grid gap-5 md:grid-cols-3">
+          {MOMENTOS.map((m, i) => (
+            <Reveal key={m.title} delay={i * 80}>
+              <article className="h-full rounded-2xl border border-border bg-card p-7 text-center shadow-sm transition-all hover:-translate-y-1 hover:shadow-md">
+                <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[var(--brand-green-soft)] text-[var(--brand-green-deep)]"><m.Icon className="h-6 w-6" /></span>
+                <h3 className="mt-4 font-serif text-xl font-bold text-[var(--brand-green-deep)]">{m.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-foreground/75">{m.text}</p>
+              </article>
+            </Reveal>
+          ))}
         </div>
+        <Reveal className="mt-10 text-center">
+          <a href="#trajetoria" className="inline-flex items-center gap-2 rounded-full bg-[var(--brand-green-deep)] px-7 py-4 text-xs font-bold uppercase tracking-wider text-primary-foreground shadow-lg transition-transform hover:-translate-y-0.5">
+            Conheça minha história <ArrowRight className="h-4 w-4" />
+          </a>
+        </Reveal>
       </div>
     </section>
   );
 }
+
 
 /* =================================================================== */
 /* Timeline                                                             */
@@ -594,13 +580,42 @@ const PROPOSTAS = [
 
 const CATS = ["Todas", "Cultura", "Direitos", "Social", "Economia", "Saúde"];
 
+const EIXOS = [
+  { Icon: Flame, title: "Povos de Terreiro", text: "Liberdade religiosa, proteção e direitos." },
+  { Icon: Drum, title: "Cultura Popular", text: "Valorização de mestres, artistas e trabalhadores da cultura." },
+  { Icon: HandHeart, title: "Dignidade e Direitos", text: "Políticas para quem vive exclusão e vulnerabilidade." },
+  { Icon: Sprout, title: "Justiça Socioambiental", text: "Território, sustentabilidade e futuro." },
+];
+
 function Propostas() {
   const [filter, setFilter] = useState("Todas");
+  const [showAll, setShowAll] = useState(false);
   const list = useMemo(() => filter === "Todas" ? PROPOSTAS : PROPOSTAS.filter((p) => p.cat === filter), [filter]);
   return (
     <section id="propostas" className="border-y border-border bg-[var(--brand-cream)]/60 py-20">
       <div className="mx-auto max-w-7xl px-5">
-        <SectionTitle eyebrow="Propostas" title="Compromissos com Pernambuco" intro="Eixos prioritários para transformar experiência em política pública." />
+        <SectionTitle eyebrow="Renato 5077" title="O candidato de quê?" intro="Quatro eixos guiam o mandato que queremos construir." />
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {EIXOS.map((e, i) => (
+            <Reveal key={e.title} delay={i * 70}>
+              <article className="h-full rounded-2xl border border-border bg-card p-7 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
+                <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--brand-green-deep)] text-primary-foreground"><e.Icon className="h-6 w-6" /></span>
+                <h3 className="mt-4 font-serif text-xl font-bold uppercase leading-tight tracking-wide text-[var(--brand-green-deep)]">{e.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-foreground/75">{e.text}</p>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+
+        <div className="mt-10 text-center">
+          <button onClick={() => setShowAll((v) => !v)} className="inline-flex items-center gap-2 rounded-full border-2 border-[var(--brand-green-deep)] px-7 py-3.5 text-xs font-bold uppercase tracking-wider text-[var(--brand-green-deep)] transition-colors hover:bg-[var(--brand-green-deep)] hover:text-primary-foreground">
+            {showAll ? "Ocultar propostas" : "Conheça todas as propostas"}
+            <ArrowRight className={`h-4 w-4 transition-transform ${showAll ? "rotate-90" : ""}`} />
+          </button>
+        </div>
+
+        {!showAll ? null : (
+        <div className="mt-12">
         <div className="mb-8 flex flex-wrap justify-center gap-2">
           {CATS.map((c) => (
             <button
@@ -612,6 +627,7 @@ function Propostas() {
             </button>
           ))}
         </div>
+
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {list.map((p, i) => (
             <Reveal key={p.title} delay={i * 40}>
