@@ -580,13 +580,42 @@ const PROPOSTAS = [
 
 const CATS = ["Todas", "Cultura", "Direitos", "Social", "Economia", "Saúde"];
 
+const EIXOS = [
+  { Icon: Flame, title: "Povos de Terreiro", text: "Liberdade religiosa, proteção e direitos." },
+  { Icon: Drum, title: "Cultura Popular", text: "Valorização de mestres, artistas e trabalhadores da cultura." },
+  { Icon: HandHeart, title: "Dignidade e Direitos", text: "Políticas para quem vive exclusão e vulnerabilidade." },
+  { Icon: Sprout, title: "Justiça Socioambiental", text: "Território, sustentabilidade e futuro." },
+];
+
 function Propostas() {
   const [filter, setFilter] = useState("Todas");
+  const [showAll, setShowAll] = useState(false);
   const list = useMemo(() => filter === "Todas" ? PROPOSTAS : PROPOSTAS.filter((p) => p.cat === filter), [filter]);
   return (
     <section id="propostas" className="border-y border-border bg-[var(--brand-cream)]/60 py-20">
       <div className="mx-auto max-w-7xl px-5">
-        <SectionTitle eyebrow="Propostas" title="Compromissos com Pernambuco" intro="Eixos prioritários para transformar experiência em política pública." />
+        <SectionTitle eyebrow="Renato 5077" title="O candidato de quê?" intro="Quatro eixos guiam o mandato que queremos construir." />
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {EIXOS.map((e, i) => (
+            <Reveal key={e.title} delay={i * 70}>
+              <article className="h-full rounded-2xl border border-border bg-card p-7 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
+                <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--brand-green-deep)] text-primary-foreground"><e.Icon className="h-6 w-6" /></span>
+                <h3 className="mt-4 font-serif text-xl font-bold uppercase leading-tight tracking-wide text-[var(--brand-green-deep)]">{e.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-foreground/75">{e.text}</p>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+
+        <div className="mt-10 text-center">
+          <button onClick={() => setShowAll((v) => !v)} className="inline-flex items-center gap-2 rounded-full border-2 border-[var(--brand-green-deep)] px-7 py-3.5 text-xs font-bold uppercase tracking-wider text-[var(--brand-green-deep)] transition-colors hover:bg-[var(--brand-green-deep)] hover:text-primary-foreground">
+            {showAll ? "Ocultar propostas" : "Conheça todas as propostas"}
+            <ArrowRight className={`h-4 w-4 transition-transform ${showAll ? "rotate-90" : ""}`} />
+          </button>
+        </div>
+
+        {!showAll ? null : (
+        <div className="mt-12">
         <div className="mb-8 flex flex-wrap justify-center gap-2">
           {CATS.map((c) => (
             <button
@@ -598,6 +627,7 @@ function Propostas() {
             </button>
           ))}
         </div>
+
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {list.map((p, i) => (
             <Reveal key={p.title} delay={i * 40}>
