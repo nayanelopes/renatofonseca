@@ -330,44 +330,43 @@ function SectionTitle({ eyebrow, title, intro, light }: { eyebrow: string; title
 /* Story                                                                */
 /* =================================================================== */
 
+const MOMENTOS = [
+  { Icon: HomeIcon, title: "A rua", text: "Abrigos na adolescência e vida nas ruas do Recife." },
+  { Icon: Sprout, title: "A reconstrução", text: "Fé, cultura e comunidade como caminho de volta." },
+  { Icon: Drum, title: "A luta", text: "Jurema, Macumba Ordinária e defesa dos terreiros." },
+];
+
 function Story() {
   return (
     <section id="quem" className="border-y border-border bg-[var(--brand-cream)]/50 py-20">
       <div className="mx-auto max-w-6xl px-5">
-        <SectionTitle eyebrow="Quem é Renato Fonseca" title="Uma história real de transformação" />
-        <div className="grid gap-10 lg:grid-cols-[1fr_1.2fr]">
-          <Reveal className="space-y-6 text-[15px] leading-relaxed text-foreground/85 sm:text-base">
-            <div className="flex gap-4">
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[var(--brand-brown)]/15 text-[var(--brand-brown-deep)]"><HomeIcon className="h-5 w-5" /></span>
-              <p>Viveu em <strong>abrigos durante a adolescência</strong> e foi <strong>morador de rua</strong>. Conheceu o avesso da cidade — e a força de quem resiste.</p>
-            </div>
-            <div className="flex gap-4">
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[var(--brand-brown)]/15 text-[var(--brand-brown-deep)]"><Sprout className="h-5 w-5" /></span>
-              <p>Superou a <strong>dependência química</strong> e reconstruiu sua vida através da fé, da cultura e do trabalho comunitário.</p>
-            </div>
-            <div className="flex gap-4">
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[var(--brand-brown)]/15 text-[var(--brand-brown-deep)]"><Flame className="h-5 w-5" /></span>
-              <p>Juremeiro há 22 anos, <strong>tombado ao Mestre Manoel Quebra Pedra</strong>. Defensor dos povos tradicionais e da liberdade religiosa.</p>
-            </div>
-            <div className="flex gap-4">
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[var(--brand-brown)]/15 text-[var(--brand-brown-deep)]"><Drum className="h-5 w-5" /></span>
-              <p>Criador da <strong>Macumba Ordinária</strong> e do <strong>Espaço Cultural</strong> no Pátio do Terço, em Recife — casa de resistência das religiões de matriz africana.</p>
-            </div>
-          </Reveal>
-          <Reveal delay={120}>
-            <blockquote className="relative rounded-3xl border-l-4 border-[var(--brand-brown)] bg-card p-8 shadow-md">
-              <Quote className="absolute -top-4 left-6 h-10 w-10 rounded-full bg-[var(--brand-green-deep)] p-2 text-[var(--brand-green-soft)]" />
-              <p className="font-serif text-xl italic leading-relaxed text-[var(--brand-green-deep)] sm:text-2xl">
-                "Conheço a dor da exclusão porque vivi ela. Conheço a força da fé porque ela me levantou. Conheço a importância da cultura porque ela salvou minha vida. Agora quero transformar isso em <span className="bg-[var(--brand-green-soft)] px-1">políticas públicas</span>."
-              </p>
-              <p className="mt-5 text-sm font-bold uppercase tracking-widest text-[var(--brand-brown-deep)]">— Renato Fonseca</p>
-            </blockquote>
-          </Reveal>
+        <Reveal className="mx-auto max-w-3xl text-center">
+          <h2 className="font-serif text-5xl font-bold tracking-tight text-[var(--brand-green-deep)] sm:text-6xl">DA RUA À LUTA</h2>
+          <p className="mt-5 font-serif text-xl italic leading-snug text-[var(--brand-brown-deep)] sm:text-2xl">
+            Renato conhece a exclusão não pelos livros. Conhece porque viveu.
+          </p>
+        </Reveal>
+        <div className="mt-12 grid gap-5 md:grid-cols-3">
+          {MOMENTOS.map((m, i) => (
+            <Reveal key={m.title} delay={i * 80}>
+              <article className="h-full rounded-2xl border border-border bg-card p-7 text-center shadow-sm transition-all hover:-translate-y-1 hover:shadow-md">
+                <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[var(--brand-green-soft)] text-[var(--brand-green-deep)]"><m.Icon className="h-6 w-6" /></span>
+                <h3 className="mt-4 font-serif text-xl font-bold text-[var(--brand-green-deep)]">{m.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-foreground/75">{m.text}</p>
+              </article>
+            </Reveal>
+          ))}
         </div>
+        <Reveal className="mt-10 text-center">
+          <a href="#trajetoria" className="inline-flex items-center gap-2 rounded-full bg-[var(--brand-green-deep)] px-7 py-4 text-xs font-bold uppercase tracking-wider text-primary-foreground shadow-lg transition-transform hover:-translate-y-0.5">
+            Conheça minha história <ArrowRight className="h-4 w-4" />
+          </a>
+        </Reveal>
       </div>
     </section>
   );
 }
+
 
 /* =================================================================== */
 /* Timeline                                                             */
