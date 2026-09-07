@@ -131,17 +131,20 @@ function Index() {
         <Hero />
         <Story />
         <Timeline />
+        <Propostas />
+        <BancadaMacumba />
+        <Ecossantinho />
         <MacumbaOrdinaria />
         <Bandeiras />
-        <Propostas />
         <Agenda />
+        <MapaPE />
         <Galeria />
         <Depoimentos />
-        <MapaPE />
         <FacaParte />
         <RedesSociais />
         <Apoio />
       </main>
+
       <Footer />
       <FixedWhatsApp />
       <BackToTop />
