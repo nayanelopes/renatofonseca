@@ -4,6 +4,8 @@ import { toast } from "sonner";
 import { Toaster } from "@/components/ui/sonner";
 import logoAsset from "@/assets/logo-renato.jpg.asset.json";
 import renatoPhotoAsset from "@/assets/renato-foto.png.asset.json";
+import ecossantinhoImg from "@/assets/ecossantinho.jpg";
+
 import {
   MessageCircle, Heart, Instagram, Facebook, Youtube, Music2,
   MapPin, Calendar, ChevronRight, ChevronDown, Flame, ShieldCheck,
