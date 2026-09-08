@@ -709,7 +709,7 @@ function Agenda() {
   return (
     <section id="agenda" className="py-20">
       <div className="mx-auto max-w-6xl px-5">
-        <SectionTitle eyebrow="Agenda" title="Onde Renato vai estar" intro="Visitas, encontros, atos e eventos da pré-campanha." />
+        <SectionTitle eyebrow="Acompanhe Renato 5077" title="Onde Renato estará esta semana?" intro="Encontros, terreiros, rádios e festas populares. Chegue junto." />
         <div className="grid gap-4 md:grid-cols-3">
           {list.map((ev, i) => (
             <Reveal key={i} delay={i * 60}>
@@ -728,9 +728,10 @@ function Agenda() {
                   <a href={buildICS(ev)} download={`${ev.title}.ics`} className="inline-flex items-center gap-1 rounded-full border border-border px-3 py-1.5 text-[11px] font-semibold text-[var(--brand-green-deep)] hover:border-[var(--brand-green)] hover:bg-[var(--brand-green-soft)]">
                     <Calendar className="h-3 w-3" /> Calendário
                   </a>
-                  <a href={`${WHATSAPP_URL}?text=${encodeURIComponent("Quero confirmar presença em: " + ev.title + " (" + ev.date + ")")}`} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 rounded-full bg-[var(--brand-green-deep)] px-3 py-1.5 text-[11px] font-bold uppercase tracking-wider text-primary-foreground hover:bg-[var(--brand-green)]">
-                    Confirmar
+                  <a href={`${WHATSAPP_URL}?text=${encodeURIComponent("Quero ir em: " + ev.title + " (" + ev.date + ") — Renato Fonseca 5077")}`} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 rounded-full bg-[var(--brand-green-deep)] px-3 py-1.5 text-[11px] font-bold uppercase tracking-wider text-primary-foreground hover:bg-[var(--brand-green)]">
+                    Quero ir <ArrowRight className="h-3 w-3" />
                   </a>
+
                 </div>
               </article>
             </Reveal>
@@ -847,18 +848,30 @@ function Depoimentos() {
 /* Mapa PE                                                              */
 /* =================================================================== */
 
+const CIDADES = [
+  "Recife", "Olinda", "Jaboatão dos Guararapes", "Paulista", "Abreu e Lima",
+  "Cabo de Santo Agostinho", "Limoeiro", "Gravatá", "Moreno", "Timbaúba", "Surubim", "Ilha de Deus",
+];
+
 const REGIOES = [
   { name: "Região Metropolitana", info: "Recife, Olinda, Jaboatão, Paulista, Abreu e Lima" },
   { name: "Zona da Mata", info: "Limoeiro e municípios da mata norte e sul" },
-  { name: "Agreste", info: "Surubim e cidades parceiras" },
-  { name: "Sertão", info: "Articulações em construção" },
+  { name: "Agreste", info: "Gravatá, Surubim e cidades parceiras" },
+  { name: "Litoral Sul", info: "Cabo de Santo Agostinho e Gaibu" },
 ];
 
 function MapaPE() {
   return (
     <section id="mapa" className="border-y border-border bg-[var(--brand-green-deep)] py-20 text-primary-foreground">
       <div className="mx-auto max-w-6xl px-5">
-        <SectionTitle light eyebrow="Pernambuco" title="Por onde a caminhada passa" intro="Territórios visitados, terreiros, projetos e lideranças parceiras." />
+        <SectionTitle light eyebrow="Renato 5077" title="Renato por Pernambuco" intro="Uma campanha construída onde a vida acontece." />
+        <Reveal className="mb-10 flex flex-wrap justify-center gap-2">
+          {CIDADES.map((c) => (
+            <span key={c} className="inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold backdrop-blur">
+              <MapPin className="h-3.5 w-3.5 text-[var(--brand-green-soft)]" />{c}
+            </span>
+          ))}
+        </Reveal>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {REGIOES.map((r, i) => (
             <Reveal key={r.name} delay={i * 60}>
@@ -870,10 +883,16 @@ function MapaPE() {
             </Reveal>
           ))}
         </div>
+        <Reveal className="mt-10 text-center">
+          <a href="#agenda" className="inline-flex items-center gap-2 rounded-full bg-[var(--brand-green-soft)] px-7 py-3.5 text-xs font-bold uppercase tracking-wider text-[var(--brand-green-deep)] transition-transform hover:-translate-y-0.5">
+            Ver a agenda do 5077 <ArrowRight className="h-4 w-4" />
+          </a>
+        </Reveal>
       </div>
     </section>
   );
 }
+
 
 /* =================================================================== */
 /* Faça Parte                                                           */
