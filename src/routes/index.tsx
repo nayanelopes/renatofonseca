@@ -766,7 +766,7 @@ function Galeria() {
   return (
     <section id="galeria" className="border-y border-border bg-[var(--brand-cream)]/60 py-20">
       <div className="mx-auto max-w-7xl px-5">
-        <SectionTitle eyebrow="Galeria" title="Registros da caminhada" intro="Imagens da rua, do palco, do terreiro e da comunidade." />
+        <SectionTitle eyebrow="Galeria" title="A caminhada do 5077" intro="Renato com o povo: rua, terreiro, cultura e comunidade." />
         <div className="mb-8 flex flex-wrap justify-center gap-2">
           {GALERIA_CATS.map((c) => (
             <button key={c} onClick={() => setFilter(c)} className={`rounded-full px-4 py-2 text-xs font-bold uppercase tracking-wider transition-all ${filter === c ? "bg-[var(--brand-green-deep)] text-primary-foreground shadow" : "border border-[var(--brand-brown)]/30 bg-card text-[var(--brand-brown-deep)] hover:border-[var(--brand-green)]"}`}>
@@ -1030,14 +1030,18 @@ function Apoio() {
     <section id="apoie" className="relative overflow-hidden bg-[var(--brand-brown-deep)] py-24 text-primary-foreground">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_30%_20%,oklch(0.45_0.09_150),transparent_55%),radial-gradient(circle_at_75%_80%,oklch(0.35_0.08_55),transparent_55%)]" />
       <div className="mx-auto max-w-4xl px-5 text-center">
-        <span className="text-[11px] font-bold uppercase tracking-[0.3em] text-[var(--brand-green-soft)]">Apoie</span>
-        <h2 className="mt-4 font-serif text-4xl font-bold leading-tight sm:text-6xl">Sua contribuição fortalece essa luta</h2>
+        <h2 className="font-serif text-4xl font-bold leading-tight sm:text-6xl">ESSA CAMPANHA TAMBÉM É SUA.</h2>
         <p className="mx-auto mt-6 max-w-2xl text-lg text-primary-foreground/85">
-          Cada apoio fortalece a comunicação, a circulação, os encontros e a mobilização em defesa da cultura, da fé e dos invisibilizados.
+          Faça parte da construção de um Pernambuco que respeita sua cultura, seus territórios e seu povo.
         </p>
+        <div className="mt-10 flex flex-col items-center gap-2">
+          <p className="font-serif text-3xl font-bold sm:text-4xl">RENATO FONSECA</p>
+          <p className="rounded-2xl bg-[var(--brand-green)] px-8 py-3 font-serif text-6xl font-bold leading-none tracking-tight shadow-xl sm:text-7xl">5077</p>
+          <p className="text-xs font-bold uppercase tracking-[0.3em] text-[var(--brand-green-soft)]">Deputado Federal</p>
+        </div>
         <div className="mt-10 flex flex-wrap justify-center gap-3">
           <a href="#participe" className="inline-flex items-center gap-2 rounded-full bg-[var(--brand-green)] px-8 py-4 text-sm font-bold uppercase tracking-wider text-primary-foreground shadow-xl transition-transform hover:-translate-y-0.5">
-            <Heart className="h-4 w-4" /> Quero fazer parte
+            <Heart className="h-4 w-4" /> Quero participar
           </a>
           <a href={VAQUINHA_URL} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border-2 border-white/70 px-8 py-4 text-sm font-bold uppercase tracking-wider text-white transition-colors hover:bg-white hover:text-[var(--brand-brown-deep)]">
             Contribuir <ChevronRight className="h-4 w-4" />
@@ -1047,6 +1051,7 @@ function Apoio() {
     </section>
   );
 }
+
 
 /* =================================================================== */
 /* Footer                                                               */
