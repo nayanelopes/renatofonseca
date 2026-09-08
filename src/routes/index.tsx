@@ -17,8 +17,8 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Renato Fonseca — Pré-candidato a Deputado Federal por Pernambuco" },
-      { name: "description", content: "Renato Fonseca: juremeiro há 22 anos, fundador da Macumba Ordinária e pré-candidato a Deputado Federal. Cultura, dignidade e oportunidades para Pernambuco." },
+      { title: "Renato Fonseca 5077 — Deputado Federal por Pernambuco" },
+      { name: "description", content: "Renato Fonseca 5077, Deputado Federal por Pernambuco: povos de terreiro, cultura popular, dignidade e justiça socioambiental." },
       { name: "keywords", content: "Renato Fonseca, Deputado Federal, Pernambuco, Macumba Ordinária, cultura popular, religiões de matriz africana, terreiros, Jurema Sagrada" },
       { name: "author", content: "Renato Fonseca" },
       { name: "robots", content: "index, follow" },
@@ -26,13 +26,13 @@ export const Route = createFileRoute("/")({
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "pt_BR" },
       { property: "og:site_name", content: "Renato Fonseca" },
-      { property: "og:title", content: "Renato Fonseca — Da rua à luta" },
-      { property: "og:description", content: "Cultura, dignidade e oportunidades para Pernambuco. Conheça o pré-candidato a Deputado Federal." },
+      { property: "og:title", content: "Renato Fonseca 5077 — Da rua à luta" },
+      { property: "og:description", content: "Cultura, dignidade e oportunidades para Pernambuco. Renato Fonseca 5077, Deputado Federal." },
       { property: "og:image", content: renatoPhotoAsset.url },
       { property: "og:url", content: "https://renatofonseca.com.br/" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Renato Fonseca — Da rua à luta" },
-      { name: "twitter:description", content: "Pré-candidato a Deputado Federal por Pernambuco." },
+      { name: "twitter:title", content: "Renato Fonseca 5077 — Da rua à luta" },
+      { name: "twitter:description", content: "Deputado Federal por Pernambuco. Vote 5077." },
       { name: "twitter:image", content: renatoPhotoAsset.url },
     ],
     links: [
@@ -168,7 +168,7 @@ function StructuredData() {
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Renato Fonseca",
-    jobTitle: "Pré-candidato a Deputado Federal",
+    jobTitle: "Candidato a Deputado Federal — 5077",
     description: "Juremeiro há 22 anos, fundador da Macumba Ordinária, defensor dos povos tradicionais e da cultura popular pernambucana.",
     url: "https://renatofonseca.com.br/",
     image: renatoPhotoAsset.url,
@@ -206,7 +206,7 @@ function Header() {
         </nav>
         <div className="hidden items-center gap-2 lg:flex">
           <a href="#participe" className="rounded-full bg-[var(--brand-green-deep)] px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-primary-foreground shadow-sm transition-transform hover:-translate-y-0.5">
-            Fazer Parte
+            Renato 5077
           </a>
         </div>
         <button onClick={() => setOpen(!open)} aria-label={open ? "Fechar menu" : "Abrir menu"} aria-expanded={open} className="rounded-md border border-border p-2 xl:hidden">
@@ -1074,7 +1074,7 @@ function Footer() {
           <img src={logoImage} alt="Renato Fonseca" className="h-16 w-auto rounded-md bg-white/95 p-2" />
           <p className="mt-4 text-sm font-bold uppercase tracking-[0.2em] text-[var(--brand-green-soft)]">Da rua à luta</p>
           <p className="mt-3 max-w-md text-sm leading-relaxed text-primary-foreground/85">
-            Cultura, dignidade e oportunidades para Pernambuco. Pré-candidatura a Deputado Federal.
+            Cultura, dignidade e oportunidades para Pernambuco. Deputado Federal · 5077.
           </p>
         </div>
         <div>
