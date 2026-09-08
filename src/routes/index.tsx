@@ -645,10 +645,13 @@ function Propostas() {
             </Reveal>
           ))}
         </div>
+        </div>
+        )}
       </div>
     </section>
   );
 }
+
 function PItem({ label, value }: { label: string; value: string }) {
   return (
     <div className="flex gap-2">
