@@ -4,6 +4,8 @@ import { toast } from "sonner";
 import { Toaster } from "@/components/ui/sonner";
 import logoAsset from "@/assets/logo-renato.jpg.asset.json";
 import renatoPhotoAsset from "@/assets/renato-foto.png.asset.json";
+import ecossantinhoImg from "@/assets/ecossantinho.jpg";
+
 import {
   MessageCircle, Heart, Instagram, Facebook, Youtube, Music2,
   MapPin, Calendar, ChevronRight, ChevronDown, Flame, ShieldCheck,
@@ -15,8 +17,8 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Renato Fonseca — Pré-candidato a Deputado Federal por Pernambuco" },
-      { name: "description", content: "Renato Fonseca: juremeiro há 22 anos, fundador da Macumba Ordinária e pré-candidato a Deputado Federal. Cultura, dignidade e oportunidades para Pernambuco." },
+      { title: "Renato Fonseca 5077 — Deputado Federal por Pernambuco" },
+      { name: "description", content: "Renato Fonseca 5077, Deputado Federal por Pernambuco: povos de terreiro, cultura popular, dignidade e justiça socioambiental." },
       { name: "keywords", content: "Renato Fonseca, Deputado Federal, Pernambuco, Macumba Ordinária, cultura popular, religiões de matriz africana, terreiros, Jurema Sagrada" },
       { name: "author", content: "Renato Fonseca" },
       { name: "robots", content: "index, follow" },
@@ -24,13 +26,13 @@ export const Route = createFileRoute("/")({
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "pt_BR" },
       { property: "og:site_name", content: "Renato Fonseca" },
-      { property: "og:title", content: "Renato Fonseca — Da rua à luta" },
-      { property: "og:description", content: "Cultura, dignidade e oportunidades para Pernambuco. Conheça o pré-candidato a Deputado Federal." },
+      { property: "og:title", content: "Renato Fonseca 5077 — Da rua à luta" },
+      { property: "og:description", content: "Cultura, dignidade e oportunidades para Pernambuco. Renato Fonseca 5077, Deputado Federal." },
       { property: "og:image", content: renatoPhotoAsset.url },
       { property: "og:url", content: "https://renatofonseca.com.br/" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Renato Fonseca — Da rua à luta" },
-      { name: "twitter:description", content: "Pré-candidato a Deputado Federal por Pernambuco." },
+      { name: "twitter:title", content: "Renato Fonseca 5077 — Da rua à luta" },
+      { name: "twitter:description", content: "Deputado Federal por Pernambuco. Vote 5077." },
       { name: "twitter:image", content: renatoPhotoAsset.url },
     ],
     links: [
@@ -166,7 +168,7 @@ function StructuredData() {
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Renato Fonseca",
-    jobTitle: "Pré-candidato a Deputado Federal",
+    jobTitle: "Candidato a Deputado Federal — 5077",
     description: "Juremeiro há 22 anos, fundador da Macumba Ordinária, defensor dos povos tradicionais e da cultura popular pernambucana.",
     url: "https://renatofonseca.com.br/",
     image: renatoPhotoAsset.url,
@@ -204,7 +206,7 @@ function Header() {
         </nav>
         <div className="hidden items-center gap-2 lg:flex">
           <a href="#participe" className="rounded-full bg-[var(--brand-green-deep)] px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-primary-foreground shadow-sm transition-transform hover:-translate-y-0.5">
-            Fazer Parte
+            Renato 5077
           </a>
         </div>
         <button onClick={() => setOpen(!open)} aria-label={open ? "Fechar menu" : "Abrir menu"} aria-expanded={open} className="rounded-md border border-border p-2 xl:hidden">
@@ -645,10 +647,13 @@ function Propostas() {
             </Reveal>
           ))}
         </div>
+        </div>
+        )}
       </div>
     </section>
   );
 }
+
 function PItem({ label, value }: { label: string; value: string }) {
   return (
     <div className="flex gap-2">
@@ -706,7 +711,7 @@ function Agenda() {
   return (
     <section id="agenda" className="py-20">
       <div className="mx-auto max-w-6xl px-5">
-        <SectionTitle eyebrow="Agenda" title="Onde Renato vai estar" intro="Visitas, encontros, atos e eventos da pré-campanha." />
+        <SectionTitle eyebrow="Acompanhe Renato 5077" title="Onde Renato estará esta semana?" intro="Encontros, terreiros, rádios e festas populares. Chegue junto." />
         <div className="grid gap-4 md:grid-cols-3">
           {list.map((ev, i) => (
             <Reveal key={i} delay={i * 60}>
@@ -725,9 +730,10 @@ function Agenda() {
                   <a href={buildICS(ev)} download={`${ev.title}.ics`} className="inline-flex items-center gap-1 rounded-full border border-border px-3 py-1.5 text-[11px] font-semibold text-[var(--brand-green-deep)] hover:border-[var(--brand-green)] hover:bg-[var(--brand-green-soft)]">
                     <Calendar className="h-3 w-3" /> Calendário
                   </a>
-                  <a href={`${WHATSAPP_URL}?text=${encodeURIComponent("Quero confirmar presença em: " + ev.title + " (" + ev.date + ")")}`} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 rounded-full bg-[var(--brand-green-deep)] px-3 py-1.5 text-[11px] font-bold uppercase tracking-wider text-primary-foreground hover:bg-[var(--brand-green)]">
-                    Confirmar
+                  <a href={`${WHATSAPP_URL}?text=${encodeURIComponent("Quero ir em: " + ev.title + " (" + ev.date + ") — Renato Fonseca 5077")}`} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 rounded-full bg-[var(--brand-green-deep)] px-3 py-1.5 text-[11px] font-bold uppercase tracking-wider text-primary-foreground hover:bg-[var(--brand-green)]">
+                    Quero ir <ArrowRight className="h-3 w-3" />
                   </a>
+
                 </div>
               </article>
             </Reveal>
@@ -762,7 +768,7 @@ function Galeria() {
   return (
     <section id="galeria" className="border-y border-border bg-[var(--brand-cream)]/60 py-20">
       <div className="mx-auto max-w-7xl px-5">
-        <SectionTitle eyebrow="Galeria" title="Registros da caminhada" intro="Imagens da rua, do palco, do terreiro e da comunidade." />
+        <SectionTitle eyebrow="Galeria" title="A caminhada do 5077" intro="Renato com o povo: rua, terreiro, cultura e comunidade." />
         <div className="mb-8 flex flex-wrap justify-center gap-2">
           {GALERIA_CATS.map((c) => (
             <button key={c} onClick={() => setFilter(c)} className={`rounded-full px-4 py-2 text-xs font-bold uppercase tracking-wider transition-all ${filter === c ? "bg-[var(--brand-green-deep)] text-primary-foreground shadow" : "border border-[var(--brand-brown)]/30 bg-card text-[var(--brand-brown-deep)] hover:border-[var(--brand-green)]"}`}>
@@ -844,18 +850,30 @@ function Depoimentos() {
 /* Mapa PE                                                              */
 /* =================================================================== */
 
+const CIDADES = [
+  "Recife", "Olinda", "Jaboatão dos Guararapes", "Paulista", "Abreu e Lima",
+  "Cabo de Santo Agostinho", "Limoeiro", "Gravatá", "Moreno", "Timbaúba", "Surubim", "Ilha de Deus",
+];
+
 const REGIOES = [
   { name: "Região Metropolitana", info: "Recife, Olinda, Jaboatão, Paulista, Abreu e Lima" },
   { name: "Zona da Mata", info: "Limoeiro e municípios da mata norte e sul" },
-  { name: "Agreste", info: "Surubim e cidades parceiras" },
-  { name: "Sertão", info: "Articulações em construção" },
+  { name: "Agreste", info: "Gravatá, Surubim e cidades parceiras" },
+  { name: "Litoral Sul", info: "Cabo de Santo Agostinho e Gaibu" },
 ];
 
 function MapaPE() {
   return (
     <section id="mapa" className="border-y border-border bg-[var(--brand-green-deep)] py-20 text-primary-foreground">
       <div className="mx-auto max-w-6xl px-5">
-        <SectionTitle light eyebrow="Pernambuco" title="Por onde a caminhada passa" intro="Territórios visitados, terreiros, projetos e lideranças parceiras." />
+        <SectionTitle light eyebrow="Renato 5077" title="Renato por Pernambuco" intro="Uma campanha construída onde a vida acontece." />
+        <Reveal className="mb-10 flex flex-wrap justify-center gap-2">
+          {CIDADES.map((c) => (
+            <span key={c} className="inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold backdrop-blur">
+              <MapPin className="h-3.5 w-3.5 text-[var(--brand-green-soft)]" />{c}
+            </span>
+          ))}
+        </Reveal>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {REGIOES.map((r, i) => (
             <Reveal key={r.name} delay={i * 60}>
@@ -867,10 +885,16 @@ function MapaPE() {
             </Reveal>
           ))}
         </div>
+        <Reveal className="mt-10 text-center">
+          <a href="#agenda" className="inline-flex items-center gap-2 rounded-full bg-[var(--brand-green-soft)] px-7 py-3.5 text-xs font-bold uppercase tracking-wider text-[var(--brand-green-deep)] transition-transform hover:-translate-y-0.5">
+            Ver a agenda do 5077 <ArrowRight className="h-4 w-4" />
+          </a>
+        </Reveal>
       </div>
     </section>
   );
 }
+
 
 /* =================================================================== */
 /* Faça Parte                                                           */
@@ -1008,14 +1032,18 @@ function Apoio() {
     <section id="apoie" className="relative overflow-hidden bg-[var(--brand-brown-deep)] py-24 text-primary-foreground">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_30%_20%,oklch(0.45_0.09_150),transparent_55%),radial-gradient(circle_at_75%_80%,oklch(0.35_0.08_55),transparent_55%)]" />
       <div className="mx-auto max-w-4xl px-5 text-center">
-        <span className="text-[11px] font-bold uppercase tracking-[0.3em] text-[var(--brand-green-soft)]">Apoie</span>
-        <h2 className="mt-4 font-serif text-4xl font-bold leading-tight sm:text-6xl">Sua contribuição fortalece essa luta</h2>
+        <h2 className="font-serif text-4xl font-bold leading-tight sm:text-6xl">ESSA CAMPANHA TAMBÉM É SUA.</h2>
         <p className="mx-auto mt-6 max-w-2xl text-lg text-primary-foreground/85">
-          Cada apoio fortalece a comunicação, a circulação, os encontros e a mobilização em defesa da cultura, da fé e dos invisibilizados.
+          Faça parte da construção de um Pernambuco que respeita sua cultura, seus territórios e seu povo.
         </p>
+        <div className="mt-10 flex flex-col items-center gap-2">
+          <p className="font-serif text-3xl font-bold sm:text-4xl">RENATO FONSECA</p>
+          <p className="rounded-2xl bg-[var(--brand-green)] px-8 py-3 font-serif text-6xl font-bold leading-none tracking-tight shadow-xl sm:text-7xl">5077</p>
+          <p className="text-xs font-bold uppercase tracking-[0.3em] text-[var(--brand-green-soft)]">Deputado Federal</p>
+        </div>
         <div className="mt-10 flex flex-wrap justify-center gap-3">
           <a href="#participe" className="inline-flex items-center gap-2 rounded-full bg-[var(--brand-green)] px-8 py-4 text-sm font-bold uppercase tracking-wider text-primary-foreground shadow-xl transition-transform hover:-translate-y-0.5">
-            <Heart className="h-4 w-4" /> Quero fazer parte
+            <Heart className="h-4 w-4" /> Quero participar
           </a>
           <a href={VAQUINHA_URL} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border-2 border-white/70 px-8 py-4 text-sm font-bold uppercase tracking-wider text-white transition-colors hover:bg-white hover:text-[var(--brand-brown-deep)]">
             Contribuir <ChevronRight className="h-4 w-4" />
@@ -1025,6 +1053,7 @@ function Apoio() {
     </section>
   );
 }
+
 
 /* =================================================================== */
 /* Footer                                                               */
@@ -1045,7 +1074,7 @@ function Footer() {
           <img src={logoImage} alt="Renato Fonseca" className="h-16 w-auto rounded-md bg-white/95 p-2" />
           <p className="mt-4 text-sm font-bold uppercase tracking-[0.2em] text-[var(--brand-green-soft)]">Da rua à luta</p>
           <p className="mt-3 max-w-md text-sm leading-relaxed text-primary-foreground/85">
-            Cultura, dignidade e oportunidades para Pernambuco. Pré-candidatura a Deputado Federal.
+            Cultura, dignidade e oportunidades para Pernambuco. Deputado Federal · 5077.
           </p>
         </div>
         <div>
@@ -1100,17 +1129,86 @@ function Footer() {
 function FixedWhatsApp() {
   return (
     <a
-      href={WHATSAPP_URL}
+      href={WHATSAPP_CTA}
       target="_blank"
       rel="noreferrer"
-      aria-label="Falar no WhatsApp"
+      aria-label="Fale com a campanha no WhatsApp"
       className="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 rounded-full bg-[oklch(0.62_0.18_150)] px-5 py-3.5 text-sm font-bold uppercase tracking-wider text-white shadow-2xl ring-4 ring-[oklch(0.62_0.18_150)]/25 transition-transform hover:-translate-y-0.5"
     >
       <MessageCircle className="h-5 w-5" />
-      <span className="hidden sm:inline">WhatsApp</span>
+      <span className="hidden sm:inline">Fale com a campanha</span>
     </a>
   );
 }
+
+/* =================================================================== */
+/* Bancada da Macumba + Ecossantinho                                    */
+/* =================================================================== */
+
+function BancadaMacumba() {
+  return (
+    <section id="bancada" className="relative overflow-hidden bg-[var(--brand-brown-deep)] py-20 text-primary-foreground">
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_15%_25%,oklch(0.42_0.09_150),transparent_55%),radial-gradient(circle_at_85%_75%,oklch(0.38_0.08_55),transparent_55%)]" />
+      <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 lg:grid-cols-[1.1fr_0.9fr]">
+        <Reveal>
+          <span className="text-[11px] font-bold uppercase tracking-[0.3em] text-[var(--brand-green-soft)]">Articulação política</span>
+          <h2 className="mt-3 font-serif text-4xl font-bold leading-tight sm:text-5xl">BANCADA DA MACUMBA</h2>
+          <p className="mt-4 font-serif text-2xl italic text-[var(--brand-green-soft)]">Do terreiro para o Congresso.</p>
+          <p className="mt-6 max-w-xl text-base leading-relaxed text-primary-foreground/85">
+            Uma articulação nacional de candidaturas e lideranças de matriz africana e de povos tradicionais
+            para disputar orçamento, leis de proteção e reconhecimento do povo de terreiro. Renato Fonseca
+            é uma das vozes dessa construção em Pernambuco.
+          </p>
+        </Reveal>
+        <Reveal delay={100} className="grid gap-3">
+          {[
+            { Icon: ShieldCheck, t: "Proteção", d: "Lei federal contra o racismo religioso." },
+            { Icon: Landmark, t: "Orçamento", d: "Recursos públicos para casas e terreiros." },
+            { Icon: Users, t: "Representação", d: "Presença permanente do povo de axé no Congresso." },
+          ].map((x) => (
+            <div key={x.t} className="flex gap-4 rounded-2xl border border-white/15 bg-white/5 p-5 backdrop-blur">
+              <x.Icon className="h-6 w-6 shrink-0 text-[var(--brand-green-soft)]" />
+              <div>
+                <p className="font-serif text-lg font-bold">{x.t}</p>
+                <p className="text-sm text-primary-foreground/80">{x.d}</p>
+              </div>
+            </div>
+          ))}
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+function Ecossantinho() {
+  return (
+    <section id="ecossantinho" className="border-y border-border py-20">
+      <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 lg:grid-cols-2">
+        <Reveal>
+          <img src={ecossantinhoImg} alt="Santinho de papel semente brotando nas mãos" loading="lazy" width={1200} height={900} className="w-full rounded-3xl border-4 border-[var(--brand-brown)]/30 object-cover shadow-xl" />
+        </Reveal>
+        <Reveal delay={100}>
+          <span className="text-[11px] font-bold uppercase tracking-[0.3em] text-[var(--brand-brown-deep)]">Ecossantinho</span>
+          <h2 className="mt-3 font-serif text-4xl font-bold leading-tight text-[var(--brand-green-deep)] sm:text-5xl">
+            🌱 Nosso santinho vira natureza
+          </h2>
+          <p className="mt-5 text-base leading-relaxed text-foreground/80">
+            O material de campanha do 5077 é feito em papel semente. Depois de ler, é só plantar:
+            o santinho vira flor, tempero ou muda.
+          </p>
+          <p className="mt-3 text-base leading-relaxed text-foreground/80">
+            Menos lixo nas ruas, mais vida no chão de Pernambuco — uma campanha que respeita o território
+            que quer representar.
+          </p>
+          <a href={WHATSAPP_CTA} target="_blank" rel="noreferrer" className="mt-7 inline-flex items-center gap-2 rounded-full bg-[var(--brand-brown)] px-7 py-4 text-xs font-bold uppercase tracking-wider text-primary-foreground shadow-lg transition-transform hover:-translate-y-0.5">
+            Conheça o Ecossantinho <ArrowRight className="h-4 w-4" />
+          </a>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
 
 function BackToTop() {
   const [show, setShow] = useState(false);
