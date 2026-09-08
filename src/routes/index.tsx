@@ -1127,17 +1127,86 @@ function Footer() {
 function FixedWhatsApp() {
   return (
     <a
-      href={WHATSAPP_URL}
+      href={WHATSAPP_CTA}
       target="_blank"
       rel="noreferrer"
-      aria-label="Falar no WhatsApp"
+      aria-label="Fale com a campanha no WhatsApp"
       className="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 rounded-full bg-[oklch(0.62_0.18_150)] px-5 py-3.5 text-sm font-bold uppercase tracking-wider text-white shadow-2xl ring-4 ring-[oklch(0.62_0.18_150)]/25 transition-transform hover:-translate-y-0.5"
     >
       <MessageCircle className="h-5 w-5" />
-      <span className="hidden sm:inline">WhatsApp</span>
+      <span className="hidden sm:inline">Fale com a campanha</span>
     </a>
   );
 }
+
+/* =================================================================== */
+/* Bancada da Macumba + Ecossantinho                                    */
+/* =================================================================== */
+
+function BancadaMacumba() {
+  return (
+    <section id="bancada" className="relative overflow-hidden bg-[var(--brand-brown-deep)] py-20 text-primary-foreground">
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_15%_25%,oklch(0.42_0.09_150),transparent_55%),radial-gradient(circle_at_85%_75%,oklch(0.38_0.08_55),transparent_55%)]" />
+      <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 lg:grid-cols-[1.1fr_0.9fr]">
+        <Reveal>
+          <span className="text-[11px] font-bold uppercase tracking-[0.3em] text-[var(--brand-green-soft)]">Articulação política</span>
+          <h2 className="mt-3 font-serif text-4xl font-bold leading-tight sm:text-5xl">BANCADA DA MACUMBA</h2>
+          <p className="mt-4 font-serif text-2xl italic text-[var(--brand-green-soft)]">Do terreiro para o Congresso.</p>
+          <p className="mt-6 max-w-xl text-base leading-relaxed text-primary-foreground/85">
+            Uma articulação nacional de candidaturas e lideranças de matriz africana e de povos tradicionais
+            para disputar orçamento, leis de proteção e reconhecimento do povo de terreiro. Renato Fonseca
+            é uma das vozes dessa construção em Pernambuco.
+          </p>
+        </Reveal>
+        <Reveal delay={100} className="grid gap-3">
+          {[
+            { Icon: ShieldCheck, t: "Proteção", d: "Lei federal contra o racismo religioso." },
+            { Icon: Landmark, t: "Orçamento", d: "Recursos públicos para casas e terreiros." },
+            { Icon: Users, t: "Representação", d: "Presença permanente do povo de axé no Congresso." },
+          ].map((x) => (
+            <div key={x.t} className="flex gap-4 rounded-2xl border border-white/15 bg-white/5 p-5 backdrop-blur">
+              <x.Icon className="h-6 w-6 shrink-0 text-[var(--brand-green-soft)]" />
+              <div>
+                <p className="font-serif text-lg font-bold">{x.t}</p>
+                <p className="text-sm text-primary-foreground/80">{x.d}</p>
+              </div>
+            </div>
+          ))}
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+function Ecossantinho() {
+  return (
+    <section id="ecossantinho" className="border-y border-border py-20">
+      <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 lg:grid-cols-2">
+        <Reveal>
+          <img src={ecossantinhoImg} alt="Santinho de papel semente brotando nas mãos" loading="lazy" width={1200} height={900} className="w-full rounded-3xl border-4 border-[var(--brand-brown)]/30 object-cover shadow-xl" />
+        </Reveal>
+        <Reveal delay={100}>
+          <span className="text-[11px] font-bold uppercase tracking-[0.3em] text-[var(--brand-brown-deep)]">Ecossantinho</span>
+          <h2 className="mt-3 font-serif text-4xl font-bold leading-tight text-[var(--brand-green-deep)] sm:text-5xl">
+            🌱 Nosso santinho vira natureza
+          </h2>
+          <p className="mt-5 text-base leading-relaxed text-foreground/80">
+            O material de campanha do 5077 é feito em papel semente. Depois de ler, é só plantar:
+            o santinho vira flor, tempero ou muda.
+          </p>
+          <p className="mt-3 text-base leading-relaxed text-foreground/80">
+            Menos lixo nas ruas, mais vida no chão de Pernambuco — uma campanha que respeita o território
+            que quer representar.
+          </p>
+          <a href={WHATSAPP_CTA} target="_blank" rel="noreferrer" className="mt-7 inline-flex items-center gap-2 rounded-full bg-[var(--brand-brown)] px-7 py-4 text-xs font-bold uppercase tracking-wider text-primary-foreground shadow-lg transition-transform hover:-translate-y-0.5">
+            Conheça o Ecossantinho <ArrowRight className="h-4 w-4" />
+          </a>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
 
 function BackToTop() {
   const [show, setShow] = useState(false);
