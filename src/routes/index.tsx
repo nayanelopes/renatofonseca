@@ -1187,7 +1187,7 @@ function BancadaMacumba() {
 
 function Ecossantinho() {
   return (
-    <section id="ecossantinho" className="border-y border-border py-20">
+    <section id="ecossantinho" className="border-y border-border bg-[var(--brand-offwhite)] py-20">
       <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 lg:grid-cols-2">
         <Reveal>
           <img src={ecossantinhoImg} alt="Santinho de papel semente brotando nas mãos" loading="lazy" width={1200} height={900} className="w-full rounded-3xl border-4 border-[var(--brand-brown)]/30 object-cover shadow-xl" />
@@ -1195,8 +1195,9 @@ function Ecossantinho() {
         <Reveal delay={100}>
           <span className="text-[11px] font-bold uppercase tracking-[0.3em] text-[var(--brand-brown-deep)]">Ecossantinho</span>
           <h2 className="mt-3 font-serif text-4xl font-bold leading-tight text-[var(--brand-brown-deep)] sm:text-5xl">
-            🌱 Nosso santinho vira natureza
+            <span className="text-[var(--brand-brown-deep)]">Política</span>{" "}<span className="text-[var(--brand-green)]">feita à mão.</span>
           </h2>
+          <p className="mt-2 font-serif text-xl italic text-[var(--brand-brown-light)]">Nosso santinho vira natureza.</p>
           <p className="mt-5 text-base leading-relaxed text-foreground/80">
             O material de campanha do 5077 é feito em papel semente. Depois de ler, é só plantar:
             o santinho vira flor, tempero ou muda.
