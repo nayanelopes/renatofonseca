@@ -199,7 +199,7 @@ function Header() {
         </a>
         <nav aria-label="Navegação principal" className="hidden items-center gap-5 xl:flex">
           {NAV_LINKS.map((l) => (
-            <a key={l.href} href={l.href} className="relative text-[13px] font-medium text-foreground/75 transition-colors hover:text-[var(--brand-green-deep)]">
+            <a key={l.href} href={l.href} className="relative text-[13px] font-medium text-foreground/75 transition-colors hover:text-[var(--brand-brown-deep)]">
               {l.label}
             </a>
           ))}
@@ -252,7 +252,7 @@ function Hero() {
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_left,var(--brand-green-soft),transparent_55%),radial-gradient(ellipse_at_bottom_right,oklch(0.92_0.05_55),transparent_55%)]" />
       <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-12 lg:grid-cols-[1fr_1fr] lg:py-16">
         <div className="animate-fade-up">
-          <h1 className="font-serif text-6xl font-bold leading-[0.95] tracking-tight text-[var(--brand-green-deep)] sm:text-7xl lg:text-8xl">
+          <h1 className="font-serif text-6xl font-bold leading-[0.95] tracking-tight text-[var(--brand-brown-deep)] sm:text-7xl lg:text-8xl">
             RENATO<br />FONSECA
           </h1>
           <div className="mt-6 flex flex-wrap items-center gap-4">
@@ -322,7 +322,7 @@ function SectionTitle({ eyebrow, title, intro, light }: { eyebrow: string; title
   return (
     <Reveal className="mx-auto mb-12 max-w-3xl text-center">
       <span className={`text-[11px] font-bold uppercase tracking-[0.28em] ${light ? "text-[var(--brand-green-soft)]" : "text-[var(--brand-brown-deep)]"}`}>{eyebrow}</span>
-      <h2 className={`mt-3 font-serif text-4xl font-bold tracking-tight sm:text-5xl ${light ? "text-primary-foreground" : "text-[var(--brand-green-deep)]"}`}>{title}</h2>
+      <h2 className={`mt-3 font-serif text-4xl font-bold tracking-tight sm:text-5xl ${light ? "text-primary-foreground" : "text-[var(--brand-brown-deep)]"}`}>{title}</h2>
       {intro && <p className={`mt-4 text-base leading-relaxed sm:text-lg ${light ? "text-primary-foreground/85" : "text-muted-foreground"}`}>{intro}</p>}
     </Reveal>
   );
@@ -340,10 +340,10 @@ const MOMENTOS = [
 
 function Story() {
   return (
-    <section id="quem" className="border-y border-border bg-[var(--brand-cream)]/50 py-20">
+    <section id="quem" className="border-y border-border bg-[var(--brand-offwhite)] py-20">
       <div className="mx-auto max-w-6xl px-5">
         <Reveal className="mx-auto max-w-3xl text-center">
-          <h2 className="font-serif text-5xl font-bold tracking-tight text-[var(--brand-green-deep)] sm:text-6xl">DA RUA À LUTA</h2>
+          <h2 className="font-serif text-5xl font-bold tracking-tight text-[var(--brand-brown-deep)] sm:text-6xl">DA RUA À LUTA</h2>
           <p className="mt-5 font-serif text-xl italic leading-snug text-[var(--brand-brown-deep)] sm:text-2xl">
             Renato conhece a exclusão não pelos livros. Conhece porque viveu.
           </p>
@@ -352,8 +352,8 @@ function Story() {
           {MOMENTOS.map((m, i) => (
             <Reveal key={m.title} delay={i * 80}>
               <article className="h-full rounded-2xl border border-border bg-card p-7 text-center shadow-sm transition-all hover:-translate-y-1 hover:shadow-md">
-                <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[var(--brand-green-soft)] text-[var(--brand-green-deep)]"><m.Icon className="h-6 w-6" /></span>
-                <h3 className="mt-4 font-serif text-xl font-bold text-[var(--brand-green-deep)]">{m.title}</h3>
+                <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[var(--brand-green-soft)] text-[var(--brand-brown-deep)]"><m.Icon className="h-6 w-6" /></span>
+                <h3 className="mt-4 font-serif text-xl font-bold text-[var(--brand-brown-deep)]">{m.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-foreground/75">{m.text}</p>
               </article>
             </Reveal>
@@ -408,7 +408,7 @@ function Timeline() {
                   <div className="flex items-start justify-between gap-4">
                     <div>
                       <span className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--brand-brown-deep)]">{m.year}</span>
-                      <h3 className="mt-1 font-serif text-xl font-bold text-[var(--brand-green-deep)] sm:text-2xl">{m.title}</h3>
+                      <h3 className="mt-1 font-serif text-xl font-bold text-[var(--brand-brown-deep)] sm:text-2xl">{m.title}</h3>
                       <p className="mt-2 text-[15px] leading-relaxed text-foreground/80">{m.text}</p>
                     </div>
                     <ChevronDown className={`mt-1 h-5 w-5 shrink-0 text-[var(--brand-brown)] transition-transform ${isOpen ? "rotate-180" : ""}`} />
@@ -484,7 +484,7 @@ function MacumbaOrdinaria() {
             <p className="text-sm leading-relaxed text-primary-foreground/90">
               O <strong>Espaço Cultural Macumba Ordinária</strong>, no Pátio do Terço (Recife), é casa de encontro, formação, celebração e defesa do povo de terreiro.
             </p>
-            <a href={INSTAGRAM_URL} target="_blank" rel="noreferrer" className="mt-6 inline-flex items-center gap-2 rounded-full bg-[var(--brand-green-soft)] px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-[var(--brand-green-deep)] transition-transform hover:-translate-y-0.5">
+            <a href={INSTAGRAM_URL} target="_blank" rel="noreferrer" className="mt-6 inline-flex items-center gap-2 rounded-full bg-[var(--brand-green-soft)] px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-[var(--brand-brown-deep)] transition-transform hover:-translate-y-0.5">
               <Instagram className="h-4 w-4" /> Acompanhar nas redes
             </a>
           </Reveal>
@@ -527,10 +527,10 @@ function Bandeiras() {
                   aria-expanded={isOpen}
                   className={`group relative flex h-full w-full flex-col rounded-2xl border bg-card p-6 text-left shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg ${isOpen ? "border-[var(--brand-green-deep)] ring-2 ring-[var(--brand-green)]/30" : "border-border hover:border-[var(--brand-green)]"}`}
                 >
-                  <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--brand-green-soft)] text-[var(--brand-green-deep)] transition-colors group-hover:bg-[var(--brand-green-deep)] group-hover:text-primary-foreground">
+                  <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--brand-green-soft)] text-[var(--brand-brown-deep)] transition-colors group-hover:bg-[var(--brand-green-deep)] group-hover:text-primary-foreground">
                     <b.Icon className="h-6 w-6" />
                   </span>
-                  <h3 className="mt-4 font-serif text-lg font-bold leading-tight text-[var(--brand-green-deep)]">{b.title}</h3>
+                  <h3 className="mt-4 font-serif text-lg font-bold leading-tight text-[var(--brand-brown-deep)]">{b.title}</h3>
                   <span className="mt-3 inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-wider text-[var(--brand-brown-deep)]">
                     {isOpen ? "Fechar" : "Saiba mais"} <Plus className={`h-3 w-3 transition-transform ${isOpen ? "rotate-45" : ""}`} />
                   </span>
@@ -594,7 +594,7 @@ function Propostas() {
   const [showAll, setShowAll] = useState(false);
   const list = useMemo(() => filter === "Todas" ? PROPOSTAS : PROPOSTAS.filter((p) => p.cat === filter), [filter]);
   return (
-    <section id="propostas" className="border-y border-border bg-[var(--brand-cream)]/60 py-20">
+    <section id="propostas" className="border-y border-border bg-[var(--brand-offwhite)] py-20">
       <div className="mx-auto max-w-7xl px-5">
         <SectionTitle eyebrow="Renato 5077" title="O candidato de quê?" intro="Quatro eixos guiam o mandato que queremos construir." />
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -602,7 +602,7 @@ function Propostas() {
             <Reveal key={e.title} delay={i * 70}>
               <article className="h-full rounded-2xl border border-border bg-card p-7 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
                 <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--brand-green-deep)] text-primary-foreground"><e.Icon className="h-6 w-6" /></span>
-                <h3 className="mt-4 font-serif text-xl font-bold uppercase leading-tight tracking-wide text-[var(--brand-green-deep)]">{e.title}</h3>
+                <h3 className="mt-4 font-serif text-xl font-bold uppercase leading-tight tracking-wide text-[var(--brand-brown-deep)]">{e.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-foreground/75">{e.text}</p>
               </article>
             </Reveal>
@@ -610,7 +610,7 @@ function Propostas() {
         </div>
 
         <div className="mt-10 text-center">
-          <button onClick={() => setShowAll((v) => !v)} className="inline-flex items-center gap-2 rounded-full border-2 border-[var(--brand-green-deep)] px-7 py-3.5 text-xs font-bold uppercase tracking-wider text-[var(--brand-green-deep)] transition-colors hover:bg-[var(--brand-green-deep)] hover:text-primary-foreground">
+          <button onClick={() => setShowAll((v) => !v)} className="inline-flex items-center gap-2 rounded-full border-2 border-[var(--brand-green-deep)] px-7 py-3.5 text-xs font-bold uppercase tracking-wider text-[var(--brand-brown-deep)] transition-colors hover:bg-[var(--brand-green-deep)] hover:text-primary-foreground">
             {showAll ? "Ocultar propostas" : "Conheça todas as propostas"}
             <ArrowRight className={`h-4 w-4 transition-transform ${showAll ? "rotate-90" : ""}`} />
           </button>
@@ -634,8 +634,8 @@ function Propostas() {
           {list.map((p, i) => (
             <Reveal key={p.title} delay={i * 40}>
               <article className="flex h-full flex-col rounded-2xl border border-border bg-card p-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
-                <span className="inline-flex w-fit rounded-full bg-[var(--brand-green-soft)] px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-[var(--brand-green-deep)]">{p.cat}</span>
-                <h3 className="mt-3 font-serif text-lg font-bold leading-tight text-[var(--brand-green-deep)]">{p.title}</h3>
+                <span className="inline-flex w-fit rounded-full bg-[var(--brand-green-soft)] px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-[var(--brand-brown-deep)]">{p.cat}</span>
+                <h3 className="mt-3 font-serif text-lg font-bold leading-tight text-[var(--brand-brown-deep)]">{p.title}</h3>
                 <dl className="mt-4 space-y-2.5 text-[13px] leading-relaxed">
                   <PItem label="Problema" value={p.problema} />
                   <PItem label="Solução" value={p.solucao} />
@@ -717,17 +717,17 @@ function Agenda() {
             <Reveal key={i} delay={i * 60}>
               <article className="flex h-full flex-col rounded-2xl border border-border bg-card p-5 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md">
                 <div className="flex items-baseline gap-2">
-                  <span className="font-serif text-3xl font-bold text-[var(--brand-green-deep)]">{ev.date}</span>
-                  <span className="rounded-full bg-[var(--brand-green-soft)] px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[var(--brand-green-deep)]">{ev.weekday}</span>
+                  <span className="font-serif text-3xl font-bold text-[var(--brand-brown-deep)]">{ev.date}</span>
+                  <span className="rounded-full bg-[var(--brand-green-soft)] px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[var(--brand-brown-deep)]">{ev.weekday}</span>
                 </div>
-                <h3 className="mt-3 font-serif text-base font-bold leading-snug text-[var(--brand-green-deep)]">{ev.title}</h3>
+                <h3 className="mt-3 font-serif text-base font-bold leading-snug text-[var(--brand-brown-deep)]">{ev.title}</h3>
                 <p className="mt-2 flex items-start gap-1.5 text-[12px] text-muted-foreground"><MapPin className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[var(--brand-brown)]" />{ev.location}</p>
                 {ev.time && <p className="mt-1 text-[12px] font-bold text-[var(--brand-brown-deep)]">🕐 {ev.time}</p>}
                 <div className="mt-auto flex flex-wrap gap-2 pt-4">
-                  <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(ev.location)}`} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 rounded-full border border-border px-3 py-1.5 text-[11px] font-semibold text-[var(--brand-green-deep)] hover:border-[var(--brand-green)] hover:bg-[var(--brand-green-soft)]">
+                  <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(ev.location)}`} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 rounded-full border border-border px-3 py-1.5 text-[11px] font-semibold text-[var(--brand-brown-deep)] hover:border-[var(--brand-green)] hover:bg-[var(--brand-green-soft)]">
                     <MapPin className="h-3 w-3" /> Mapa
                   </a>
-                  <a href={buildICS(ev)} download={`${ev.title}.ics`} className="inline-flex items-center gap-1 rounded-full border border-border px-3 py-1.5 text-[11px] font-semibold text-[var(--brand-green-deep)] hover:border-[var(--brand-green)] hover:bg-[var(--brand-green-soft)]">
+                  <a href={buildICS(ev)} download={`${ev.title}.ics`} className="inline-flex items-center gap-1 rounded-full border border-border px-3 py-1.5 text-[11px] font-semibold text-[var(--brand-brown-deep)] hover:border-[var(--brand-green)] hover:bg-[var(--brand-green-soft)]">
                     <Calendar className="h-3 w-3" /> Calendário
                   </a>
                   <a href={`${WHATSAPP_URL}?text=${encodeURIComponent("Quero ir em: " + ev.title + " (" + ev.date + ") — Renato Fonseca 5077")}`} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 rounded-full bg-[var(--brand-green-deep)] px-3 py-1.5 text-[11px] font-bold uppercase tracking-wider text-primary-foreground hover:bg-[var(--brand-green)]">
@@ -740,7 +740,7 @@ function Agenda() {
           ))}
         </div>
         <div className="mt-10 text-center">
-          <button onClick={() => setShowAll((v) => !v)} className="inline-flex items-center gap-2 rounded-full border-2 border-[var(--brand-green-deep)] px-6 py-3 text-xs font-bold uppercase tracking-wider text-[var(--brand-green-deep)] transition-colors hover:bg-[var(--brand-green-deep)] hover:text-primary-foreground">
+          <button onClick={() => setShowAll((v) => !v)} className="inline-flex items-center gap-2 rounded-full border-2 border-[var(--brand-green-deep)] px-6 py-3 text-xs font-bold uppercase tracking-wider text-[var(--brand-brown-deep)] transition-colors hover:bg-[var(--brand-green-deep)] hover:text-primary-foreground">
             {showAll ? "Mostrar apenas próximos eventos" : "Ver agenda completa"}
             <ChevronDown className={`h-4 w-4 transition-transform ${showAll ? "rotate-180" : ""}`} />
           </button>
@@ -766,7 +766,7 @@ function Galeria() {
   const [open, setOpen] = useState<number | null>(null);
   const list = filter === "Todas" ? GALERIA_ITEMS : GALERIA_ITEMS.filter((g) => g.cat === filter);
   return (
-    <section id="galeria" className="border-y border-border bg-[var(--brand-cream)]/60 py-20">
+    <section id="galeria" className="border-y border-border bg-[var(--brand-offwhite)] py-20">
       <div className="mx-auto max-w-7xl px-5">
         <SectionTitle eyebrow="Galeria" title="A caminhada do 5077" intro="Renato com o povo: rua, terreiro, cultura e comunidade." />
         <div className="mb-8 flex flex-wrap justify-center gap-2">
@@ -778,7 +778,7 @@ function Galeria() {
         </div>
         <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
           {list.map((g, i) => (
-            <button key={g.id} onClick={() => setOpen(g.id)} aria-label={`Abrir ${g.title}`} className={`group relative flex items-center justify-center overflow-hidden rounded-2xl border border-border bg-gradient-to-br from-[var(--brand-green-soft)] via-card to-[var(--brand-cream)] text-[var(--brand-green-deep)]/40 transition-transform hover:-translate-y-1 ${i % 3 === 0 ? "aspect-[3/4]" : "aspect-square"}`}>
+            <button key={g.id} onClick={() => setOpen(g.id)} aria-label={`Abrir ${g.title}`} className={`group relative flex items-center justify-center overflow-hidden rounded-2xl border border-border bg-[var(--brand-offwhite)] text-[var(--brand-brown-deep)]/40 transition-transform hover:-translate-y-1 ${i % 3 === 0 ? "aspect-[3/4]" : "aspect-square"}`}>
               <Sparkles className="h-8 w-8" />
               <span className="absolute inset-x-0 bottom-0 translate-y-full bg-[var(--brand-green-deep)]/85 px-3 py-2 text-left text-[11px] font-semibold uppercase tracking-wider text-white transition-transform group-hover:translate-y-0">
                 {g.cat}
@@ -793,7 +793,7 @@ function Galeria() {
             <button onClick={() => setOpen(null)} aria-label="Fechar" className="absolute right-5 top-5 rounded-full bg-white/15 p-2 text-white hover:bg-white/30">
               <X className="h-6 w-6" />
             </button>
-            <div onClick={(e) => e.stopPropagation()} className="flex aspect-[4/5] w-full max-w-3xl items-center justify-center rounded-2xl bg-gradient-to-br from-[var(--brand-green-soft)] via-card to-[var(--brand-cream)] text-[var(--brand-green-deep)]/40">
+            <div onClick={(e) => e.stopPropagation()} className="flex aspect-[4/5] w-full max-w-3xl items-center justify-center rounded-2xl bg-[var(--brand-offwhite)] text-[var(--brand-brown-deep)]/40">
               <Sparkles className="h-16 w-16" />
             </div>
           </div>
@@ -830,10 +830,10 @@ function Depoimentos() {
                 <div className="mt-6 flex items-center gap-3 border-t border-border pt-4">
                   <span className="flex h-12 w-12 items-center justify-center rounded-full bg-[var(--brand-green-deep)] font-serif text-base font-bold text-primary-foreground">{d.initials}</span>
                   <div>
-                    <p className="font-serif text-base font-bold text-[var(--brand-green-deep)]">{d.name}</p>
+                    <p className="font-serif text-base font-bold text-[var(--brand-brown-deep)]">{d.name}</p>
                     <p className="text-[11px] font-semibold uppercase tracking-wider text-[var(--brand-brown-deep)]">{d.role}</p>
                   </div>
-                  <button aria-label="Ver vídeo (em breve)" className="ml-auto rounded-full bg-[var(--brand-green-soft)] p-2 text-[var(--brand-green-deep)] transition-colors hover:bg-[var(--brand-green)] hover:text-primary-foreground">
+                  <button aria-label="Ver vídeo (em breve)" className="ml-auto rounded-full bg-[var(--brand-green-soft)] p-2 text-[var(--brand-brown-deep)] transition-colors hover:bg-[var(--brand-green)] hover:text-primary-foreground">
                     <PlayCircle className="h-5 w-5" />
                   </button>
                 </div>
@@ -886,7 +886,7 @@ function MapaPE() {
           ))}
         </div>
         <Reveal className="mt-10 text-center">
-          <a href="#agenda" className="inline-flex items-center gap-2 rounded-full bg-[var(--brand-green-soft)] px-7 py-3.5 text-xs font-bold uppercase tracking-wider text-[var(--brand-green-deep)] transition-transform hover:-translate-y-0.5">
+          <a href="#agenda" className="inline-flex items-center gap-2 rounded-full bg-[var(--brand-green-soft)] px-7 py-3.5 text-xs font-bold uppercase tracking-wider text-[var(--brand-brown-deep)] transition-transform hover:-translate-y-0.5">
             Ver a agenda do 5077 <ArrowRight className="h-4 w-4" />
           </a>
         </Reveal>
@@ -927,7 +927,7 @@ function FacaParte() {
       <div className="mx-auto grid max-w-7xl gap-10 px-5 lg:grid-cols-[0.9fr_1.1fr]">
         <Reveal>
           <span className="text-[11px] font-bold uppercase tracking-[0.28em] text-[var(--brand-brown-deep)]">Faça parte</span>
-          <h2 className="mt-3 font-serif text-4xl font-bold tracking-tight text-[var(--brand-green-deep)] sm:text-5xl">
+          <h2 className="mt-3 font-serif text-4xl font-bold tracking-tight text-[var(--brand-brown-deep)] sm:text-5xl">
             Faça parte da caminhada
           </h2>
           <p className="mt-5 text-base leading-relaxed text-foreground/80">
@@ -940,12 +940,12 @@ function FacaParte() {
         <Reveal delay={120}>
           {sent ? (
             <div className="flex h-full flex-col items-center justify-center rounded-2xl border border-[var(--brand-green)] bg-[var(--brand-green-soft)] p-10 text-center shadow-md">
-              <CheckCircle2 className="h-14 w-14 text-[var(--brand-green-deep)]" />
-              <h3 className="mt-4 font-serif text-3xl font-bold text-[var(--brand-green-deep)]">Obrigado!</h3>
+              <CheckCircle2 className="h-14 w-14 text-[var(--brand-brown-deep)]" />
+              <h3 className="mt-4 font-serif text-3xl font-bold text-[var(--brand-brown-deep)]">Obrigado!</h3>
               <p className="mt-3 max-w-md text-base text-foreground/80">
                 Obrigado por fortalecer essa caminhada. Em breve nossa equipe entra em contato.
               </p>
-              <button onClick={() => { setSent(false); setForm({ nome: "", cidade: "", telefone: "", email: "" }); setAreas({}); }} className="mt-6 rounded-full border border-[var(--brand-green-deep)] px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-[var(--brand-green-deep)] hover:bg-[var(--brand-green-deep)] hover:text-primary-foreground">
+              <button onClick={() => { setSent(false); setForm({ nome: "", cidade: "", telefone: "", email: "" }); setAreas({}); }} className="mt-6 rounded-full border border-[var(--brand-green-deep)] px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-[var(--brand-brown-deep)] hover:bg-[var(--brand-green-deep)] hover:text-primary-foreground">
                 Enviar outra inscrição
               </button>
             </div>
@@ -1002,7 +1002,7 @@ const REDES = [
 
 function RedesSociais() {
   return (
-    <section id="redes" className="border-y border-border bg-[var(--brand-cream)]/60 py-16">
+    <section id="redes" className="border-y border-border bg-[var(--brand-offwhite)] py-16">
       <div className="mx-auto max-w-6xl px-5">
         <SectionTitle eyebrow="Redes Sociais" title="Conecte-se com a caminhada" />
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
@@ -1012,7 +1012,7 @@ function RedesSociais() {
                 <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[var(--brand-green-deep)] text-primary-foreground transition-colors group-hover:bg-[var(--brand-brown)]">
                   <Icon className="h-6 w-6" />
                 </span>
-                <p className="font-serif text-base font-bold text-[var(--brand-green-deep)]">{name}</p>
+                <p className="font-serif text-base font-bold text-[var(--brand-brown-deep)]">{name}</p>
                 <p className="text-xs font-semibold text-[var(--brand-brown-deep)]">{handle}</p>
               </a>
             </Reveal>
@@ -1104,7 +1104,7 @@ function Footer() {
           <p className="mt-4 text-sm text-primary-foreground/85">Receba a agenda, notícias e atos da caminhada.</p>
           <form onSubmit={onSub} className="mt-4 flex overflow-hidden rounded-full border border-white/25 bg-white/10 focus-within:border-[var(--brand-green-soft)]">
             <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="seu@email.com" className="flex-1 bg-transparent px-4 py-2.5 text-sm placeholder:text-primary-foreground/50 focus:outline-none" aria-label="E-mail para newsletter" />
-            <button type="submit" aria-label="Assinar" className="bg-[var(--brand-green)] px-4 hover:bg-[var(--brand-green-soft)] hover:text-[var(--brand-green-deep)]"><Send className="h-4 w-4" /></button>
+            <button type="submit" aria-label="Assinar" className="bg-[var(--brand-green)] px-4 hover:bg-[var(--brand-green-soft)] hover:text-[var(--brand-brown-deep)]"><Send className="h-4 w-4" /></button>
           </form>
         </div>
       </div>
@@ -1189,7 +1189,7 @@ function Ecossantinho() {
         </Reveal>
         <Reveal delay={100}>
           <span className="text-[11px] font-bold uppercase tracking-[0.3em] text-[var(--brand-brown-deep)]">Ecossantinho</span>
-          <h2 className="mt-3 font-serif text-4xl font-bold leading-tight text-[var(--brand-green-deep)] sm:text-5xl">
+          <h2 className="mt-3 font-serif text-4xl font-bold leading-tight text-[var(--brand-brown-deep)] sm:text-5xl">
             🌱 Nosso santinho vira natureza
           </h2>
           <p className="mt-5 text-base leading-relaxed text-foreground/80">
