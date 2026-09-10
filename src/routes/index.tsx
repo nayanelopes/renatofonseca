@@ -248,8 +248,13 @@ function Hero() {
     return () => clearInterval(t);
   }, []);
   return (
-    <section id="top" className="relative overflow-hidden">
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_left,var(--brand-green-soft),transparent_55%),radial-gradient(ellipse_at_bottom_right,oklch(0.92_0.05_55),transparent_55%)]" />
+    <section id="top" className="relative overflow-hidden bg-background">
+      {/* Formas orgânicas — terra, vegetação, território */}
+      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+        <div className="absolute -left-32 -top-28 h-[26rem] w-[26rem] rounded-[58%_42%_46%_54%/48%_56%_44%_52%] bg-[var(--brand-green-soft)] opacity-70" />
+        <div className="absolute -right-24 top-24 h-[30rem] w-[30rem] rounded-[46%_54%_60%_40%/52%_44%_56%_48%] bg-[var(--brand-cream)] opacity-80" />
+        <div className="absolute bottom-[-8rem] left-1/3 h-72 w-72 rounded-[52%_48%_40%_60%/44%_58%_42%_56%] bg-[var(--brand-brown-light)] opacity-10" />
+      </div>
       <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-12 lg:grid-cols-[1fr_1fr] lg:py-16">
         <div className="animate-fade-up">
           <h1 className="font-serif text-6xl font-bold leading-[0.95] tracking-tight text-[var(--brand-brown-deep)] sm:text-7xl lg:text-8xl">
