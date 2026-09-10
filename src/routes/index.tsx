@@ -356,7 +356,7 @@ function Story() {
         <div className="mt-12 grid gap-5 md:grid-cols-3">
           {MOMENTOS.map((m, i) => (
             <Reveal key={m.title} delay={i * 80}>
-              <article className="h-full rounded-2xl border border-border bg-card p-7 text-center shadow-sm transition-all hover:-translate-y-1 hover:shadow-md">
+              <article className="h-full rounded-[26px] border border-[var(--brand-brown)]/25 bg-card p-7 text-center shadow-sm transition-all hover:-translate-y-1 hover:shadow-md">
                 <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[var(--brand-green-soft)] text-[var(--brand-brown-deep)]"><m.Icon className="h-6 w-6" /></span>
                 <h3 className="mt-4 font-serif text-xl font-bold text-[var(--brand-brown-deep)]">{m.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-foreground/75">{m.text}</p>
@@ -408,7 +408,7 @@ function Timeline() {
                 <button
                   onClick={() => setOpen(isOpen ? null : i)}
                   aria-expanded={isOpen}
-                  className="block w-full rounded-2xl border border-border bg-card p-6 text-left shadow-sm transition-all hover:-translate-y-0.5 hover:border-[var(--brand-green)]/40 hover:shadow-md"
+                  className="block w-full rounded-[26px] border border-[var(--brand-brown)]/25 bg-card p-6 text-left shadow-sm transition-all hover:-translate-y-0.5 hover:border-[var(--brand-green)]/40 hover:shadow-md"
                 >
                   <div className="flex items-start justify-between gap-4">
                     <div>
@@ -605,7 +605,7 @@ function Propostas() {
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {EIXOS.map((e, i) => (
             <Reveal key={e.title} delay={i * 70}>
-              <article className="h-full rounded-2xl border border-border bg-card p-7 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
+              <article className="h-full rounded-[26px] border border-[var(--brand-brown)]/25 bg-card p-7 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
                 <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--brand-green-deep)] text-primary-foreground"><e.Icon className="h-6 w-6" /></span>
                 <h3 className="mt-4 font-serif text-xl font-bold uppercase leading-tight tracking-wide text-[var(--brand-brown-deep)]">{e.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-foreground/75">{e.text}</p>
@@ -638,7 +638,7 @@ function Propostas() {
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {list.map((p, i) => (
             <Reveal key={p.title} delay={i * 40}>
-              <article className="flex h-full flex-col rounded-2xl border border-border bg-card p-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
+              <article className="flex h-full flex-col rounded-[26px] border border-[var(--brand-brown)]/25 bg-card p-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
                 <span className="inline-flex w-fit rounded-full bg-[var(--brand-green-soft)] px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-[var(--brand-brown-deep)]">{p.cat}</span>
                 <h3 className="mt-3 font-serif text-lg font-bold leading-tight text-[var(--brand-brown-deep)]">{p.title}</h3>
                 <dl className="mt-4 space-y-2.5 text-[13px] leading-relaxed">
@@ -720,7 +720,7 @@ function Agenda() {
         <div className="grid gap-4 md:grid-cols-3">
           {list.map((ev, i) => (
             <Reveal key={i} delay={i * 60}>
-              <article className="flex h-full flex-col rounded-2xl border border-border bg-card p-5 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md">
+              <article className="flex h-full flex-col rounded-[26px] border border-[var(--brand-brown)]/25 bg-card p-5 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md">
                 <div className="flex items-baseline gap-2">
                   <span className="font-serif text-3xl font-bold text-[var(--brand-brown-deep)]">{ev.date}</span>
                   <span className="rounded-full bg-[var(--brand-green-soft)] px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[var(--brand-brown-deep)]">{ev.weekday}</span>
@@ -829,7 +829,7 @@ function Depoimentos() {
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {DEPOIMENTOS.map((d, i) => (
             <Reveal key={d.name} delay={i * 50}>
-              <article className="relative flex h-full flex-col rounded-2xl border border-border bg-card p-7 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
+              <article className="relative flex h-full flex-col rounded-[26px] border border-[var(--brand-brown)]/25 bg-card p-7 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
                 <Quote className="absolute -top-3 left-5 h-8 w-8 rounded-full bg-[var(--brand-brown)] p-1.5 text-primary-foreground" />
                 <p className="mt-3 text-[15px] italic leading-relaxed text-foreground/85">"{d.text}"</p>
                 <div className="mt-6 flex items-center gap-3 border-t border-border pt-4">
@@ -955,7 +955,7 @@ function FacaParte() {
               </button>
             </div>
           ) : (
-            <form onSubmit={onSubmit} className="rounded-2xl border border-border bg-card p-7 shadow-md">
+            <form onSubmit={onSubmit} className="rounded-[26px] border border-[var(--brand-brown)]/25 bg-card p-7 shadow-md">
               <div className="grid gap-4 sm:grid-cols-2">
                 <Field label="Nome *"><input name="nome" value={form.nome} onChange={onChange} className={input} maxLength={120} required autoComplete="name" /></Field>
                 <Field label="Cidade"><input name="cidade" value={form.cidade} onChange={onChange} className={input} maxLength={80} autoComplete="address-level2" /></Field>
@@ -1013,7 +1013,7 @@ function RedesSociais() {
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
           {REDES.map(({ name, url, Icon, handle }, i) => (
             <Reveal key={name} delay={i * 40}>
-              <a href={url} target="_blank" rel="noreferrer" className="group flex flex-col items-center gap-2 rounded-2xl border border-border bg-card p-6 text-center transition-all hover:-translate-y-1 hover:border-[var(--brand-green)] hover:shadow-md">
+              <a href={url} target="_blank" rel="noreferrer" className="group flex flex-col items-center gap-2 rounded-[26px] border border-[var(--brand-brown)]/25 bg-card p-6 text-center transition-all hover:-translate-y-1 hover:border-[var(--brand-green)] hover:shadow-md">
                 <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[var(--brand-green-deep)] text-primary-foreground transition-colors group-hover:bg-[var(--brand-brown)]">
                   <Icon className="h-6 w-6" />
                 </span>
