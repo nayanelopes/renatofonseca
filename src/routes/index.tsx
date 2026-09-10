@@ -348,7 +348,7 @@ function Story() {
     <section id="quem" className="border-y border-border bg-[var(--brand-offwhite)] py-20">
       <div className="mx-auto max-w-6xl px-5">
         <Reveal className="mx-auto max-w-3xl text-center">
-          <h2 className="font-serif text-5xl font-bold tracking-tight text-[var(--brand-brown-deep)] sm:text-6xl">DA RUA À LUTA</h2>
+          <h2 className="font-serif text-5xl font-bold tracking-tight text-[var(--brand-brown-deep)] sm:text-6xl">DA RUA <span className="text-[var(--brand-green)]">À LUTA</span></h2>
           <p className="mt-5 font-serif text-xl italic leading-snug text-[var(--brand-brown-deep)] sm:text-2xl">
             Renato conhece a exclusão não pelos livros. Conhece porque viveu.
           </p>
