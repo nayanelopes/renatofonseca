@@ -628,7 +628,7 @@ function Propostas() {
             <button
               key={c}
               onClick={() => setFilter(c)}
-              className={`rounded-full px-4 py-2 text-xs font-bold uppercase tracking-wider transition-all ${filter === c ? "bg-[var(--brand-green-deep)] text-primary-foreground shadow" : "border border-[var(--brand-brown)]/30 bg-card text-[var(--brand-brown-deep)] hover:border-[var(--brand-green)]"}`}
+              className={`rounded-full px-4 py-2 text-xs font-bold uppercase tracking-wider transition-all ${filter === c ? "bg-[var(--brand-green)] text-primary-foreground shadow" : "border-[1.5px] border-[var(--brand-brown)] bg-card text-[var(--brand-brown-deep)] hover:border-[var(--brand-green)]"}`}
             >
               {c}
             </button>
@@ -722,20 +722,20 @@ function Agenda() {
             <Reveal key={i} delay={i * 60}>
               <article className="flex h-full flex-col rounded-[26px] border border-[var(--brand-brown)]/25 bg-card p-5 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md">
                 <div className="flex items-baseline gap-2">
-                  <span className="font-serif text-3xl font-bold text-[var(--brand-brown-deep)]">{ev.date}</span>
+                  <span className="font-serif text-3xl font-bold text-[var(--brand-green)]">{ev.date}</span>
                   <span className="rounded-full bg-[var(--brand-green-soft)] px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[var(--brand-brown-deep)]">{ev.weekday}</span>
                 </div>
                 <h3 className="mt-3 font-serif text-base font-bold leading-snug text-[var(--brand-brown-deep)]">{ev.title}</h3>
                 <p className="mt-2 flex items-start gap-1.5 text-[12px] text-muted-foreground"><MapPin className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[var(--brand-brown)]" />{ev.location}</p>
                 {ev.time && <p className="mt-1 text-[12px] font-bold text-[var(--brand-brown-deep)]">🕐 {ev.time}</p>}
                 <div className="mt-auto flex flex-wrap gap-2 pt-4">
-                  <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(ev.location)}`} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 rounded-full border border-border px-3 py-1.5 text-[11px] font-semibold text-[var(--brand-brown-deep)] hover:border-[var(--brand-green)] hover:bg-[var(--brand-green-soft)]">
+                  <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(ev.location)}`} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 rounded-full border-[1.5px] border-[var(--brand-brown)] px-3 py-1.5 text-[11px] font-semibold text-[var(--brand-brown-deep)] hover:border-[var(--brand-green)] hover:bg-[var(--brand-green-soft)]">
                     <MapPin className="h-3 w-3" /> Mapa
                   </a>
-                  <a href={buildICS(ev)} download={`${ev.title}.ics`} className="inline-flex items-center gap-1 rounded-full border border-border px-3 py-1.5 text-[11px] font-semibold text-[var(--brand-brown-deep)] hover:border-[var(--brand-green)] hover:bg-[var(--brand-green-soft)]">
+                  <a href={buildICS(ev)} download={`${ev.title}.ics`} className="inline-flex items-center gap-1 rounded-full border-[1.5px] border-[var(--brand-brown)] px-3 py-1.5 text-[11px] font-semibold text-[var(--brand-brown-deep)] hover:border-[var(--brand-green)] hover:bg-[var(--brand-green-soft)]">
                     <Calendar className="h-3 w-3" /> Calendário
                   </a>
-                  <a href={`${WHATSAPP_URL}?text=${encodeURIComponent("Quero ir em: " + ev.title + " (" + ev.date + ") — Renato Fonseca 5077")}`} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 rounded-full bg-[var(--brand-green-deep)] px-3 py-1.5 text-[11px] font-bold uppercase tracking-wider text-primary-foreground hover:bg-[var(--brand-green)]">
+                  <a href={`${WHATSAPP_URL}?text=${encodeURIComponent("Quero ir em: " + ev.title + " (" + ev.date + ") — Renato Fonseca 5077")}`} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 rounded-full bg-[var(--brand-green)] px-3 py-1.5 text-[11px] font-bold uppercase tracking-wider text-primary-foreground hover:bg-[var(--brand-green)]">
                     Quero ir <ArrowRight className="h-3 w-3" />
                   </a>
 
@@ -776,7 +776,7 @@ function Galeria() {
         <SectionTitle eyebrow="Galeria" title="A caminhada do 5077" intro="Renato com o povo: rua, terreiro, cultura e comunidade." />
         <div className="mb-8 flex flex-wrap justify-center gap-2">
           {GALERIA_CATS.map((c) => (
-            <button key={c} onClick={() => setFilter(c)} className={`rounded-full px-4 py-2 text-xs font-bold uppercase tracking-wider transition-all ${filter === c ? "bg-[var(--brand-green-deep)] text-primary-foreground shadow" : "border border-[var(--brand-brown)]/30 bg-card text-[var(--brand-brown-deep)] hover:border-[var(--brand-green)]"}`}>
+            <button key={c} onClick={() => setFilter(c)} className={`rounded-full px-4 py-2 text-xs font-bold uppercase tracking-wider transition-all ${filter === c ? "bg-[var(--brand-green)] text-primary-foreground shadow" : "border-[1.5px] border-[var(--brand-brown)] bg-card text-[var(--brand-brown-deep)] hover:border-[var(--brand-green)]"}`}>
               {c}
             </button>
           ))}
