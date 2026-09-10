@@ -261,7 +261,7 @@ function Hero() {
             RENATO<br />FONSECA
           </h1>
           <div className="mt-6 flex flex-wrap items-center gap-4">
-            <span className="rounded-2xl bg-[var(--brand-green-deep)] px-6 py-3 font-serif text-5xl font-bold leading-none tracking-tight text-primary-foreground shadow-xl sm:text-6xl">
+            <span className="rounded-2xl bg-[var(--brand-green)] px-6 py-3 font-serif text-5xl font-bold leading-none tracking-tight text-primary-foreground shadow-xl sm:text-6xl">
               5077
             </span>
             <span className="text-[12px] font-bold uppercase leading-tight tracking-[0.22em] text-[var(--brand-brown-deep)]">
@@ -273,7 +273,7 @@ function Hero() {
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <a href="#quem" className="inline-flex items-center gap-2 rounded-full bg-[var(--brand-green-deep)] px-7 py-4 text-sm font-bold uppercase tracking-wider text-primary-foreground shadow-xl transition-transform hover:-translate-y-0.5">
+            <a href="#quem" className="inline-flex items-center gap-2 rounded-full bg-[var(--brand-green)] px-7 py-4 text-sm font-bold uppercase tracking-wider text-primary-foreground shadow-xl transition-transform hover:-translate-y-0.5">
               Conheça Renato
             </a>
             <a href="#participe" className="group inline-flex items-center gap-2 rounded-full border-2 border-[var(--brand-brown)] px-7 py-4 text-sm font-bold uppercase tracking-wider text-[var(--brand-brown-deep)] transition-colors hover:bg-[var(--brand-brown)] hover:text-primary-foreground">
@@ -297,7 +297,7 @@ function Hero() {
                 className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ${i === idx ? "opacity-100 animate-ken-burns" : "opacity-0"}`}
               />
             ))}
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[var(--brand-green-deep)]/40 to-transparent" />
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-[var(--brand-brown-deep)]/35" />
             <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 gap-1.5">
               {HERO_SLIDES.map((_, i) => (
                 <button
@@ -365,7 +365,7 @@ function Story() {
           ))}
         </div>
         <Reveal className="mt-10 text-center">
-          <a href="#trajetoria" className="inline-flex items-center gap-2 rounded-full bg-[var(--brand-green-deep)] px-7 py-4 text-xs font-bold uppercase tracking-wider text-primary-foreground shadow-lg transition-transform hover:-translate-y-0.5">
+          <a href="#trajetoria" className="inline-flex items-center gap-2 rounded-full bg-[var(--brand-green)] px-7 py-4 text-xs font-bold uppercase tracking-wider text-primary-foreground shadow-lg transition-transform hover:-translate-y-0.5">
             Conheça minha história <ArrowRight className="h-4 w-4" />
           </a>
         </Reveal>
@@ -467,7 +467,7 @@ function MacumbaOrdinaria() {
   ];
   return (
     <section id="macumba" className="relative overflow-hidden border-y border-border bg-[var(--brand-green-deep)] py-20 text-primary-foreground">
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_20%,oklch(0.45_0.1_150),transparent_55%),radial-gradient(circle_at_85%_80%,oklch(0.4_0.08_55),transparent_55%)]" />
+      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 overflow-hidden"><div className="absolute -left-24 -top-24 h-[24rem] w-[24rem] rounded-[56%_44%_48%_52%/50%_54%_46%_50%] bg-[var(--brand-green)] opacity-25" /><div className="absolute -right-20 bottom-[-6rem] h-[26rem] w-[26rem] rounded-[44%_56%_58%_42%/54%_46%_54%_46%] bg-[var(--brand-brown-light)] opacity-25" /></div>
       <div className="mx-auto max-w-7xl px-5">
         <SectionTitle light eyebrow="O Movimento" title="Macumba Ordinária" intro="Movimento cultural independente de resistência, valorização e defesa das religiões de matriz africana." />
         <div className="mb-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -869,7 +869,7 @@ const REGIOES = [
 
 function MapaPE() {
   return (
-    <section id="mapa" className="border-y border-border bg-[var(--brand-green-deep)] py-20 text-primary-foreground">
+    <section id="mapa" className="border-y border-border bg-[var(--brand-offwhite)] py-20">
       <div className="mx-auto max-w-6xl px-5">
         <SectionTitle light eyebrow="Renato 5077" title="Renato por Pernambuco" intro="Uma campanha construída onde a vida acontece." />
         <Reveal className="mb-10 flex flex-wrap justify-center gap-2">
@@ -1035,7 +1035,7 @@ function RedesSociais() {
 function Apoio() {
   return (
     <section id="apoie" className="relative overflow-hidden bg-[var(--brand-brown-deep)] py-24 text-primary-foreground">
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_30%_20%,oklch(0.45_0.09_150),transparent_55%),radial-gradient(circle_at_75%_80%,oklch(0.35_0.08_55),transparent_55%)]" />
+      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 overflow-hidden"><div className="absolute -left-24 -top-24 h-[24rem] w-[24rem] rounded-[56%_44%_48%_52%/50%_54%_46%_50%] bg-[var(--brand-green)] opacity-25" /><div className="absolute -right-20 bottom-[-6rem] h-[26rem] w-[26rem] rounded-[44%_56%_58%_42%/54%_46%_54%_46%] bg-[var(--brand-brown-light)] opacity-25" /></div>
       <div className="mx-auto max-w-4xl px-5 text-center">
         <h2 className="font-serif text-4xl font-bold leading-tight sm:text-6xl">ESSA CAMPANHA TAMBÉM É SUA.</h2>
         <p className="mx-auto mt-6 max-w-2xl text-lg text-primary-foreground/85">
@@ -1153,7 +1153,7 @@ function FixedWhatsApp() {
 function BancadaMacumba() {
   return (
     <section id="bancada" className="relative overflow-hidden bg-[var(--brand-brown-deep)] py-20 text-primary-foreground">
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_15%_25%,oklch(0.42_0.09_150),transparent_55%),radial-gradient(circle_at_85%_75%,oklch(0.38_0.08_55),transparent_55%)]" />
+      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 overflow-hidden"><div className="absolute -left-24 -top-24 h-[24rem] w-[24rem] rounded-[56%_44%_48%_52%/50%_54%_46%_50%] bg-[var(--brand-green)] opacity-25" /><div className="absolute -right-20 bottom-[-6rem] h-[26rem] w-[26rem] rounded-[44%_56%_58%_42%/54%_46%_54%_46%] bg-[var(--brand-brown-light)] opacity-25" /></div>
       <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 lg:grid-cols-[1.1fr_0.9fr]">
         <Reveal>
           <span className="text-[11px] font-bold uppercase tracking-[0.3em] text-[var(--brand-green-soft)]">Articulação política</span>
