@@ -871,27 +871,27 @@ function MapaPE() {
   return (
     <section id="mapa" className="border-y border-border bg-[var(--brand-offwhite)] py-20">
       <div className="mx-auto max-w-6xl px-5">
-        <SectionTitle light eyebrow="Renato 5077" title="Renato por Pernambuco" intro="Uma campanha construída onde a vida acontece." />
+        <SectionTitle eyebrow="Renato 5077" title="Renato por Pernambuco" intro="Uma campanha construída onde a vida acontece." />
         <Reveal className="mb-10 flex flex-wrap justify-center gap-2">
           {CIDADES.map((c) => (
-            <span key={c} className="inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold backdrop-blur">
-              <MapPin className="h-3.5 w-3.5 text-[var(--brand-green-soft)]" />{c}
+            <span key={c} className="inline-flex items-center gap-1.5 rounded-full border-[1.5px] border-[var(--brand-brown)] bg-background px-4 py-2 text-sm font-semibold text-[var(--brand-brown-deep)]">
+              <MapPin className="h-3.5 w-3.5 text-[var(--brand-green)]" />{c}
             </span>
           ))}
         </Reveal>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {REGIOES.map((r, i) => (
             <Reveal key={r.name} delay={i * 60}>
-              <article className="h-full rounded-2xl border border-white/15 bg-white/5 p-6 backdrop-blur transition-all hover:-translate-y-1 hover:bg-white/10">
-                <MapPin className="h-6 w-6 text-[var(--brand-green-soft)]" />
-                <h3 className="mt-3 font-serif text-lg font-bold leading-tight">{r.name}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-primary-foreground/80">{r.info}</p>
+              <article className="h-full rounded-[26px] border border-[var(--brand-brown)]/25 bg-card p-6 transition-all hover:-translate-y-1 hover:shadow-md">
+                <MapPin className="h-6 w-6 text-[var(--brand-green)]" />
+                <h3 className="mt-3 font-serif text-lg font-bold leading-tight text-[var(--brand-brown-deep)]">{r.name}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{r.info}</p>
               </article>
             </Reveal>
           ))}
         </div>
         <Reveal className="mt-10 text-center">
-          <a href="#agenda" className="inline-flex items-center gap-2 rounded-full bg-[var(--brand-green-soft)] px-7 py-3.5 text-xs font-bold uppercase tracking-wider text-[var(--brand-brown-deep)] transition-transform hover:-translate-y-0.5">
+          <a href="#agenda" className="inline-flex items-center gap-2 rounded-full bg-[var(--brand-green)] px-7 py-3.5 text-xs font-bold uppercase tracking-wider text-primary-foreground transition-transform hover:-translate-y-0.5">
             Ver a agenda do 5077 <ArrowRight className="h-4 w-4" />
           </a>
         </Reveal>
